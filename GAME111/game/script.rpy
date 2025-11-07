@@ -32,6 +32,8 @@ label start:
 
     e "i was here again"
 
+    e "law was here once again"
+
     # This ends the game.
 
     return
