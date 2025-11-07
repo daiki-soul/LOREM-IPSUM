@@ -28,7 +28,7 @@ label start:
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    e "I was here"
+    e "I was heree"
 
     # This ends the game.
 
