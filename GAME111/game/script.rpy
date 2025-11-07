@@ -33,6 +33,8 @@ label start:
     e "i was here again"
 
     e "law was here once again"
+    
+    e "everyday i imagine the future where i.."
 
     # This ends the game.
 
