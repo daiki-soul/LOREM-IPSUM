@@ -24,7 +24,7 @@ label start:
 
     # These display lines of dialogue.
 
-    e "I gently open the door."
+    e "I gently open the door1."
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
