@@ -30,6 +30,8 @@ label start:
 
     e "I was heree"
 
+    e "i was here again"
+
     # This ends the game.
 
     return
