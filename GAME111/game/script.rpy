@@ -3,8 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
+define mc = Character("Original World MC")
+define mc2 = Character("New World MC")
 
 # The game starts here.
 
@@ -24,17 +24,19 @@ label start:
 
     # These display lines of dialogue.
 
-    e "I gently open the door1."
+    mc "Fuck, can't wait to get home."
+       "I am feeling a bit hungry though"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    mc "I should probably grab some mcdonald's real quick"
 
-    e "I was heree"
+    mc "I was heree"
 
-    e "i was here again"
+    mc "i was here again"
 
-    e "law was here once again"
+    mc "law was here once again"
     
-    e "everyday i imagine the future where i.."
+    mc "everyday i imagine the future where i.."
+
 
     # This ends the game.
 
