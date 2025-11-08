@@ -38,6 +38,7 @@ label start:
 
     mc2 "test2"
 
+    mc2 "hey whats up?"
 
     # This ends the game.
 
