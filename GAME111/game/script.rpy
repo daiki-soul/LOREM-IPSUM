@@ -21,13 +21,13 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show mc happy
 
     # These display lines of dialogue.
 
     mc "Fuck, I'm so tired, can't wait to get home."
 
-    mc "I am a bit hungry, though."
+    "" "I am a bit hungry, though."
 
     mc "I ultimately decide to grab a quick takeout at Mcdonald's"
 
