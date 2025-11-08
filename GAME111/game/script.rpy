@@ -25,17 +25,13 @@ label start:
     # These display lines of dialogue.
 
     mc "Fuck, can't wait to get home."
-       "I am feeling a bit hungry though"
+
+    mc "I am feeling a bit hungry though"
 
     mc "I should probably grab some mcdonald's real quick"
-
-    mc "I was heree"
-
-    mc "i was here again"
-
-    mc "law was here once again"
     
-    mc "everyday i imagine the future where i.."
+    mc2 "test"
+
 
 
     # This ends the game.
