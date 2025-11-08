@@ -1,10 +1,10 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define mc = Character("Original World MC")
-define mc2 = Character("New World MC")
+define e = Character("Eileen")
+
 
 # The game starts here.
 
@@ -24,15 +24,17 @@ label start:
 
     # These display lines of dialogue.
 
-    mc "Fuck, can't wait to get home."
+    e "I gently open the door1."
 
-    mc "I am feeling a bit hungry though"
+    e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    mc "I should probably grab some mcdonald's real quick"
+    e "I was heree"
+
+    e "i was here again"
+
+    e "law was here once again"
     
-    mc2 "test"
-
-
+    e "everyday i imagine the future where i.."
 
     # This ends the game.
 
