@@ -33,6 +33,8 @@ label start:
 
     mc2 "test"
 
+    mc2 "test2"
+
 
     # This ends the game.
 
