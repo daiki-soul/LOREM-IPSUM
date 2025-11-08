@@ -34,7 +34,7 @@ label start:
     mc "I ultimately decide to grab a quick takeout at Mcdonald's"
     scene bg mcdo
 
-    mc2 "adsasdasdasdsasd"
+    mc2 "adsasdasdasdsasdasd"
 
     mc2 "test2"
 
