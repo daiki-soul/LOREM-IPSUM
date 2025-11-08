@@ -26,7 +26,7 @@ label start:
     # These display lines of dialogue.
 
     mc "Fuck, I'm so tired, can't wait to get home."
-    show mc happy
+    show mc happy at right
 
     "" "I am a bit hungry, though."
 
