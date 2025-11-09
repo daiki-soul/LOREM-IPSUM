@@ -32,6 +32,7 @@ label start:
 play music "DDLC default bgm.ogg" loop
 
     mc "I keep thinking that maybe this is the parts of intros that no one actually watches"
+
     "" "I got up my bed and cleaned up a little bit before heading to the living room"
 
     show mc happy at left
@@ -41,6 +42,7 @@ play music "DDLC default bgm.ogg" loop
     "" "Holy shit how is it already 2PM?"
 
     mc "Man, I really have to fix my sleep schedule"
+
     mc "I wonder"
 
 
