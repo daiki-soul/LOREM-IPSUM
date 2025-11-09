@@ -29,7 +29,7 @@ label start:
     ""
 
 #put music here
-    play music "DDLC default bgm.ogg" volume 1.0
+    play music "DDLC bgm.ogg" volume 1.0
 
     mc "I keep thinking that maybe this is the parts of intros that no one actually watches"
 
