@@ -45,6 +45,8 @@ label start:
 
     mc "I wonder"
 
+    stop music
+
 
 
     mc2 "adsasdasdasdsasdasd"
