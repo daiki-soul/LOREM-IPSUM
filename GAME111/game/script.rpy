@@ -35,30 +35,60 @@ label start:
 
     "" "I got up my bed and cleaned up a little bit before heading to the living room"
 
-    show mc happy at left
-
     "" "I check the clock"
 
     "" "Holy shit how is it already 2PM?"
 
+    show mc happy at left
+
     mc "Man, I really have to fix my sleep schedule"
 
-    mc "I wonder"
+    mc "I wonder.."
 
     stop music
 
     menu:
-        "no?":
+        "yes?":
             jump choice_1
-        "yes":
+        "no?":
             jump choice_2
 
     label choice_1:
-        mc "hello world 1"
+        mc "Oh, gotta get moving.. maybe I should start with some breakfast. "
+    #show mom here
+
+        mom "Oh you're up early, sweetie.'"
+
+        "I give her a dead eyed look"
+
+        mc "Yeah, I overslept again. My sleep schedule's a mess."
+
+        mom "I was just kidding. Come eat, I got you your favorite!"
+
+        mc "Mac and cheese again? Seriously?"
+
+        mom "..."
+
+        mom "What's up with you? Aren't they your favorite?"
+
+        mc "Forget it."
+
+        "I leave the house to get some fresh air"
+
+        
+
+        #bright white light transition
+
+
+
+
+
+
+
         return
 
     label choice_2:
-        mc "hello world 2"
+        mc "WORK IN PROGRESS"
         return
 
 
