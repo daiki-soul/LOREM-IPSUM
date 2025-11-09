@@ -53,13 +53,13 @@ label start:
         "yes":
             jump choice_2
 
-label choice_1:
-    mc "hello world 1"
-    return
+    label choice_1:
+        mc "hello world 1"
+        return
 
-label choice_2:
-    mc "hello world 2"
-    return
+    label choice_2:
+        mc "hello world 2"
+        return
 
 
 
