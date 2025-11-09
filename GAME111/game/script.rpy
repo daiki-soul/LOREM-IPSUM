@@ -5,7 +5,7 @@
 
 define mc = Character("old world mc")
 define mc2 = Character("new world mc")
-
+define mom = Character("Mom")
 
 # The game starts here.
 
@@ -24,15 +24,26 @@ label start:
 
 
     # These display lines of dialogue.
+    "" "I miss you.. I miss you so much.."
+    ""
+    ""
 
+#put music here
+play music "DDLC default bgm.ogg" loop
 
-    mc "Fuck, I'm so tired, can't wait to get home."
+    "" "I keep thinking that maybe this is the parts of intros that no one actually watches"
+    "" "I got up my bed and cleaned up a little bit before heading to the living room"
+
     show mc happy at left
 
-    "" "I am a bit hungry, though."
+    "" "I check the clock"
 
-    mc "I ultimately decide to grab a quick takeout at Mcdonald's"
-    scene bg mcdo
+    "" "Holy shit how is it already 2PM?"
+
+    mc "Man, I really have to fix my sleep schedule"
+    mc "I wonder"
+
+
 
     mc2 "adsasdasdasdsasdasd"
 
