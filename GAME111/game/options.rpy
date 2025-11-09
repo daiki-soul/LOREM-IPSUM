@@ -7,7 +7,7 @@
 
 ## Basics ######################################################################
 
-## A human-readable name of the game. This is used to set the default window
+## A human-readable name of the gadme. This is used to set the default window
 ## title, and shows up in the interface and error reports.
 ##
 ## The d_() surroundsing the string marks it as eligible for translation.
