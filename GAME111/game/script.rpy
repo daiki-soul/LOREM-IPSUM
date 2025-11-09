@@ -47,11 +47,11 @@ label start:
 
     stop music
 
-menu:
-    "do you love me?":
-        jump choice_1
-    "Choice 2":
-        jump choice_2
+    menu:
+        "no?":
+            jump choice_1
+        "yes":
+            jump choice_2
 
 label choice_1:
     mc "hello world 1"
@@ -60,6 +60,7 @@ label choice_1:
 label choice_2:
     mc "hello world 2"
     return
+
 
 
     mc2 "adsasdasdasdsasdasd"
