@@ -27,7 +27,7 @@ label start:
 
 
     mc "Fuck, I'm so tired, can't wait to get home."
-    show mc happy at leftd
+    show mc happy at left
 
     "" "I am a bit hungry, though."
 
