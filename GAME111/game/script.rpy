@@ -15,7 +15,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg mcdo
+    
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -29,7 +29,7 @@ label start:
     ""
 
 #put music here
-play music "DDLC default bgm.ogg" loop
+    play music "DDLC default bgm.ogg" volume 0.5
 
     mc "I keep thinking that maybe this is the parts of intros that no one actually watches"
 
