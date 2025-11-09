@@ -15,7 +15,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    
+
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -24,12 +24,12 @@ label start:
 
 
     # These display lines of dialogue.
-    "" "I miss you.. I miss you so much.."
+    "I miss you.. I miss you so much.."
     ""
     ""
 
 #put music here
-    play music "DDLC default bgm.ogg" volume 0.5
+    play music "DDLC default bgm.ogg" volume 1.0
 
     mc "I keep thinking that maybe this is the parts of intros that no one actually watches"
 
