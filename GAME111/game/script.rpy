@@ -27,7 +27,7 @@ label start:
 
 
     mc "Fuck, I'm so tired, can't wait to get home."
-    show mc happy at left
+    show mc happy at leftd
 
     "" "I am a bit hungry, though."
 
@@ -38,7 +38,7 @@ label start:
 
     mc2 "test2"
 
-    mc2 "hey whats up?dasdasdasdaddsadsd"
+    mc2 "hey whats up?dasdasdasddaddsadsd"
 
     # This ends the game.
     
