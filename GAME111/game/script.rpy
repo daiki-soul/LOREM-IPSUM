@@ -47,24 +47,20 @@ label start:
 
     stop music
 
-    menu optional_name:
-        "do you love me?"
-        "Choice 1":
-            jump choice_1
+menu:
+    "do you love me?":
+        jump choice_1
+    "Choice 2":
+        jump choice_2
 
-                
-        "Choice 2":
-            jump choice_2
-        
+label choice_1:
+    mc "hello world 1"
+    return
 
+label choice_2:
+    mc "hello world 2"
+    return
 
-    label "Choice 1":
-        mc "hello world 1"
-        
-    
-    label "Choice 1":
-        mc "hello world 2"
-        
 
     mc2 "adsasdasdasdsasdasd"
 
