@@ -40,6 +40,10 @@ label start:
 
     mc2 "hey whats up?dasdasdasdddaddsadsd"
 
+    ""
+
+    mc "monologue here"
+
     # This ends the game.
     
 
