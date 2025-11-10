@@ -56,6 +56,7 @@ label start:
         mc "Oh, gotta get moving.. maybe I should start with some breakfast. "
     #show mom here
         play music "sayonara.mp3" volume 1.0
+        
         scene bg sayonara
 
         mom "Oh you're up early, sweetie.'"
