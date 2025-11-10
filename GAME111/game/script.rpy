@@ -73,7 +73,7 @@ label start:
 
     "" "Better get some fresh air… maybe the sun will wake me up."
 
-    #bright white light transition
+    #bright white light transition test
 
     scene bg street
     with fade
