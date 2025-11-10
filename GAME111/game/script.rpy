@@ -2,7 +2,6 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
 define mc = Character("old world mc")
 define mc2 = Character("new world mc")
 define mom = Character("Mom")
@@ -56,6 +55,8 @@ label start:
     label choice_1:
         mc "Oh, gotta get moving.. maybe I should start with some breakfast. "
     #show mom here
+        play music "sayonara.mp3" volume 1.0
+        scene bg sayonara
 
         mom "Oh you're up early, sweetie.'"
 
