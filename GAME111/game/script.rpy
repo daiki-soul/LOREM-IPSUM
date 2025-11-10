@@ -78,6 +78,8 @@ label start:
     scene bg street
     with fade
 
+    mc "good mpring"
+
 
 
         #bright white light transition
