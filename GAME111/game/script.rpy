@@ -6,6 +6,7 @@
 define mc = Character("old world mc")
 define mc2 = Character("new world mc")
 define mom = Character("Mom")
+define sis = Character("Monika")
 
 #declare image bg resolutions here
 image bg MC_room = im.Scale("bg MC_room.png", 1920, 1080)
@@ -26,7 +27,7 @@ label start:
     with fade
 
     play music "DDLC bgm.mp3" volume 1.0
-
+#ACT 1
     "" "I check the clock"
 
     "" "Holy shit how is it already 2PM?"
@@ -64,29 +65,101 @@ label start:
     mc "Mac and cheese again? Seriously?"
 
     mom "..."
+    hide mom
 
     mom "What's up with you? Aren't they your favorite?"
 
     mc "Sorry, it's just that I'm not feeling great right now."
 
     mc "Forget about it."
+    show sis happy at left
+    with move
 
-    "" "Better get some fresh air… maybe the sun will wake me up."
+    sis "Aww, c'mon! You can't skip mac and cheese. That’s, like, your ultimate comfort food"
 
-    #bright white light transition test
 
+    "" "My sister, Monika, she the type of person that would mess with you for no reason at all."
+    show sis happy at center
+    with move
+
+    "" "She has that energy where she effortlessly releases good vibes around her, even if I find her a bit annoying."
+
+    "" "(mc describing sis apperacnce here)"
+
+    "" "If my mom is the warmth of my life, then that rascal sister is the glaring sunlight in my eyes while I'm sleeping."
+
+    "" "Yeah, she drives me crazy but I don't know what I'll do without her."
+
+    mc "I said forget about it."
+
+    sis "Fine, if you don't want it then don't mind if I do."
+
+    "" "She takes a bite out of my food using her spoon and runs away giggling"
+
+    mc "..."
+
+    mc "..Seriously?"
+
+    sis "Do you still want it or not? I don't want you to waste that food."
+
+    "" "Sigh"
+
+    mc "Fine, I'll eat it."
+
+    mc "You're unbelievable."
+
+    sis "That's why you love me, right?"
+
+    "" "She elbows me while grabbing her own breakfast and walking away."
+
+
+    show mom at right
+    with move
+    mom "Aww, look at you two getting along, it's like how you both used to."
+
+    mc "..."
+
+    sis "You better eat that now before I take a bite of your food again."
+
+    mc "Heh.. Yeah yeah.."
+
+    "" "After chowing down my food, I decide to go out for a walk."
+
+    stop music
+    #bright white light transition
     scene bg street
     with fade
 
-    mc "good mpring"
+    mc "Maybe this will properly wake me up."
+
+    "" "I start walking down a familiar street, the sound of birds and distant traffic filling the air."
+
+    "" "Come to think of it, I've haven't been outside in a while.."
+
+    mc "Hmm.. where should I go?"
+
+    menu:
+        "The Park":
+            jump choice_1
+        "A Convenience Store":
+            jump choice_2
 
 
 
-        #bright white light transition
+    label choice_1:
+        mc "The Park it is."
+
+
+        return
+
+    label choice_2:
+        mc "Guess I should get something to drink first"
+        return
+
+    mc
 
 
 
-    
 
 
     #NOTES FOR JOSH!!! if transitions to you aren't working, toggle the transition option
@@ -94,13 +167,7 @@ label start:
     #We should find a way to remove that toggle there so that transitions are on by default.
 
 
-    label choice_1:
-        mc "WORK IN PROGRESSS"
-        return
 
-    label choice_2:
-        mc "WORK IN PROGRESS"
-        return
 
 
 
