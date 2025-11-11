@@ -156,7 +156,7 @@ label start:
         mc "Guess I should get something to drink first"
         return
 
-    mc
+
 
 
 
