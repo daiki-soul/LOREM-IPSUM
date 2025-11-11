@@ -3,15 +3,21 @@
 #declare all characters here
 #can change color of character names, declare here
 
+#MAIN CAST
 define mc = Character("old world mc")
 define mc2 = Character("new world mc")
 define mom = Character("Mom")
 define sis = Character("Monika")
+define f1 = Character("Kel")
+
+#NPCs
+define s = Character("Convenience store staff")
 
 #declare image bg resolutions here
 image bg MC_room = im.Scale("bg MC_room.png", 1920, 1080)
 image bg kitchen = im.Scale("bg kitchen.png", 1920, 1080)
 image bg street = im.Scale("bg street.png", 1920, 1080)
+image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 
 #GAME START
 label start:
@@ -26,7 +32,7 @@ label start:
     scene bg MC_room
     with fade
 
-    play music "DDLC bgm.mp3" volume 1.0
+    play music "DDLC bgm.mp3" volume 0.7
 #ACT 1
     "" "I check the clock"
 
@@ -44,15 +50,15 @@ label start:
     with dissolve
 
 
-    stop music
+    stop music fadeout 1.0
 
     mc "Oh, I gotta get moving.. maybe I should start with some breakfast."
 
-    play music "Family bonds.mp3"
+    play music "Family bonds.mp3" volume 0.7
 
 #put mom art here
     show mom happy at right
-    with move
+    with moveinright
 
     mom "Oh, you're up early, sweetie."
  
@@ -73,7 +79,7 @@ label start:
 
     mc "Forget about it."
     show sis happy at left
-    with move
+    with moveinright
 
     sis "Aww, c'mon! You can't skip mac and cheese. That’s, like, your ultimate comfort food"
 
@@ -114,7 +120,7 @@ label start:
 
 
     show mom at right
-    with move
+    with moveinright
     mom "Aww, look at you two getting along, it's like how you both used to."
 
     mc "..."
@@ -125,16 +131,18 @@ label start:
 
     "" "After chowing down my food, I decide to go out for a walk."
 
-    stop music
+    stop music fadeout 1.0
     #bright white light transition
     scene bg street
     with fade
+
+    play music "Skips.mp3" volume 0.7
 
     mc "Maybe this will properly wake me up."
 
     "" "I start walking down a familiar street, the sound of birds and distant traffic filling the air."
 
-    "" "Come to think of it, I've haven't been outside in a while.."
+    "" "Come to think of it, I haven't been outside in a while.."
 
     mc "Hmm.. where should I go?"
 
@@ -153,8 +161,34 @@ label start:
         return
 
     label choice_2:
-        mc "Guess I should get something to drink first"
+        mc "Guess I should get something to drink first."
+
+        "" "I hastily walked to the nearest convenience store."
+        scene bg convenience store
+        with dissolve
+
+        "" "As I enter the store, I was instantly met with the sound of panel lights and the smell of cheap coffee."
+
+        mc "Lets see.. An energy drink sounds good right now"
+
+        s "Thanks, come again!"
+
+        "" "As I grab the energy drink at the top shelf of the glass fridge, I heard a familiar voice call out to me."
+
+        s "(MC)? Is that you?"
+
+        "" "No way.."
+
+        f1 "Hey it's actually you!"
+        show boy happy at right
+        with moveinright
+
+        "" "f1, "
+
+
         return
+
+        "" "WORK IN PROGRESS"
 
 
 
