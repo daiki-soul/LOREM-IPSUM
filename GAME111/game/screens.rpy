@@ -324,7 +324,7 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("Credits") action ShowMenu("Credits")
 
         if renpy.variant("pc"):
 
@@ -978,159 +978,204 @@ style history_label_text:
 ## screens (keyboard_help, mouse_help, and gamepad_help) to display the actual
 ## help.
 
-screen help():
+
+
+
+
+screen Credits():
 
     tag menu
 
-    default device = "keyboard"
+    use game_menu(_("Credits"), scroll="viewport"):
 
-    use game_menu(_("Help"), scroll="viewport"):
-
-        style_prefix "help"
+        style_prefix "Credits"
 
         vbox:
-            spacing 23
+            spacing 20
+            xalign 0.5
 
-            hbox:
+            text _("CREDITS") size 48 xalign 0.5
 
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+            vbox:
+                spacing 12
+                xalign 0.5
 
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+                text _("GAME111") size 36
+                text _("Lead Programmer: daikisoul") size 28
+                text _("Lead Artist: P_DAY") size 28
+                text _("Created by: L.Dezu") size 28
 
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
+                null height 20
 
+                # text _("Special Thanks") size 32
+                # text _("All the players and supporters!") size 28
 
-screen keyboard_help():
+                null height 30
 
-    hbox:
-        label _("Enter")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
-
-    hbox:
-        label _("Arrow Keys")
-        text _("Navigate the interface.")
-
-    hbox:
-        label _("Escape")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Ctrl")
-        text _("Skips dialogue while held down.")
-
-    hbox:
-        label _("Tab")
-        text _("Toggles dialogue skipping.")
-
-    hbox:
-        label _("Page Up")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Page Down")
-        text _("Rolls forward to later dialogue.")
-
-    hbox:
-        label "H"
-        text _("Hides the user interface.")
-
-    hbox:
-        label "S"
-        text _("Takes a screenshot.")
-
-    hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
-
-    hbox:
-        label "Shift+A"
-        text _("Opens the accessibility menu.")
+                text _("- Eupho CO. Studios") size 30 xalign 5 yalign 5
 
 
-screen mouse_help():
-
-    hbox:
-        label _("Left Click")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Middle Click")
-        text _("Hides the user interface.")
-
-    hbox:
-        label _("Right Click")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Mouse Wheel Up")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Mouse Wheel Down")
-        text _("Rolls forward to later dialogue.")
 
 
-screen gamepad_help():
-
-    hbox:
-        label _("Right Trigger\nA/Bottom Button")
-        text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Left Trigger\nLeft Shoulder")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Right Shoulder")
-        text _("Rolls forward to later dialogue.")
-
-    hbox:
-        label _("D-Pad, Sticks")
-        text _("Navigate the interface.")
-
-    hbox:
-        label _("Start, Guide, B/Right Button")
-        text _("Accesses the game menu.")
-
-    hbox:
-        label _("Y/Top Button")
-        text _("Hides the user interface.")
-
-    textbutton _("Calibrate") action GamepadCalibrate()
 
 
-style help_button is gui_button
-style help_button_text is gui_button_text
-style help_label is gui_label
-style help_label_text is gui_label_text
-style help_text is gui_text
 
-style help_button:
-    properties gui.button_properties("help_button")
-    xmargin 12
 
-style help_button_text:
-    properties gui.text_properties("help_button")
 
-style help_label:
-    xsize 375
-    right_padding 30
 
-style help_label_text:
-    size gui.text_size
-    xalign 1.0
-    textalign 1.0
+# screen help():
+
+#     tag menu
+
+#     default device = "keyboard"
+
+#     use game_menu(_("Help"), scroll="viewport"):
+
+#         style_prefix "help"
+
+#         vbox:
+#             spacing 23
+
+#             hbox:
+
+#                 textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+#                 textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+
+#                 if GamepadExists():
+#                     textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+
+#             if device == "keyboard":
+#                 use keyboard_help
+#             elif device == "mouse":
+#                 use mouse_help
+#             elif device == "gamepad":
+#                 use gamepad_help
+
+
+# screen keyboard_help():
+
+#     hbox:
+#         label _("Enter")
+#         text _("Advances dialogue and activates the interface.")
+
+#     hbox:
+#         label _("Space")
+#         text _("Advances dialogue without selecting choices.")
+
+#     hbox:
+#         label _("Arrow Keys")
+#         text _("Navigate the interface.")
+
+#     hbox:
+#         label _("Escape")
+#         text _("Accesses the game menu.")
+
+#     hbox:
+#         label _("Ctrl")
+#         text _("Skips dialogue while held down.")
+
+#     hbox:
+#         label _("Tab")
+#         text _("Toggles dialogue skipping.")
+
+#     hbox:
+#         label _("Page Up")
+#         text _("Rolls back to earlier dialogue.")
+
+#     hbox:
+#         label _("Page Down")
+#         text _("Rolls forward to later dialogue.")
+
+#     hbox:
+#         label "H"
+#         text _("Hides the user interface.")
+
+#     hbox:
+#         label "S"
+#         text _("Takes a screenshot.")
+
+#     hbox:
+#         label "V"
+#         text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+
+#     hbox:
+#         label "Shift+A"
+#         text _("Opens the accessibility menu.")
+
+
+# screen mouse_help():
+
+#     hbox:
+#         label _("Left Click")
+#         text _("Advances dialogue and activates the interface.")
+
+#     hbox:
+#         label _("Middle Click")
+#         text _("Hides the user interface.")
+
+#     hbox:
+#         label _("Right Click")
+#         text _("Accesses the game menu.")
+
+#     hbox:
+#         label _("Mouse Wheel Up")
+#         text _("Rolls back to earlier dialogue.")
+
+#     hbox:
+#         label _("Mouse Wheel Down")
+#         text _("Rolls forward to later dialogue.")
+
+
+# screen gamepad_help():
+
+#     hbox:
+#         label _("Right Trigger\nA/Bottom Button")
+#         text _("Advances dialogue and activates the interface.")
+
+#     hbox:
+#         label _("Left Trigger\nLeft Shoulder")
+#         text _("Rolls back to earlier dialogue.")
+
+#     hbox:
+#         label _("Right Shoulder")
+#         text _("Rolls forward to later dialogue.")
+
+#     hbox:
+#         label _("D-Pad, Sticks")
+#         text _("Navigate the interface.")
+
+#     hbox:
+#         label _("Start, Guide, B/Right Button")
+#         text _("Accesses the game menu.")
+
+#     hbox:
+#         label _("Y/Top Button")
+#         text _("Hides the user interface.")
+
+#     textbutton _("Calibrate") action GamepadCalibrate()
+
+
+# style help_button is gui_button
+# style help_button_text is gui_button_text
+# style help_label is gui_label
+# style help_label_text is gui_label_text
+# style help_text is gui_text
+
+# style help_button:
+#     properties gui.button_properties("help_button")
+#     xmargin 12
+
+# style help_button_text:
+#     properties gui.text_properties("help_button")
+
+# style help_label:
+#     xsize 375
+#     right_padding 30
+
+# style help_label_text:
+#     size gui.text_size
+#     xalign 1.0
+#     textalign 1.0
 
 
 
