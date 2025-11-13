@@ -9,6 +9,8 @@ define mc2 = Character("new world mc")
 define mom = Character("Mom")
 define sis = Character("Monika")
 define f1 = Character("Kel")
+define td = Character("Truck Driver")
+
 
 #NPCs
 define s = Character("Convenience store staff")
@@ -183,12 +185,31 @@ label start:
         show boy happy at right
         with moveinright
 
-        "" "f1, "
+        "" "The person standing in front of me is an old friend, Kel, we both used to hangout alot in high school."
+
+        "" "After graduation, we kinda drifted apart."
+
+        mc "Oh, hey, long time no see."
+
+        f1 "Nonchalant as always, huh?"
+
+        mc "..."
+
+        f1 "Yeah, I figured."
+
+
+
+
+        #DIALOGUES FOR STORE END HERE
+
+        #MC DEATH SCENE STARTS HERE
+
+
 
 
         return
 
-        "" "WORK IN PROGRESS"
+
 
 
 
