@@ -11,8 +11,6 @@ define sis = Character("Monika")
 define f1 = Character("Kel")
 define td = Character("Truck Driver")
 
-    
-
 #NPCs
 define s = Character("Convenience store staff")
 
@@ -26,6 +24,7 @@ image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 label start:
     
     "(MC)... (MC)..? We miss you.."
+
     "Please.. just.. r-"
 
     "" "..."
@@ -33,28 +32,22 @@ label start:
     mc "Ugh.."
     
     scene bg MC_room
+
     with fade
 
     play music "DDLC bgm.mp3" volume 0.7
-#ACT 1
+
+    #ACT 1
+
     "" "I check the clock"
-
-    
-
 
     "" "Holy shit how is it already 2PM?"
 
-    show screen incoming_monika
-
-
-
-
-    
+    show screen incoming_monika #to show monika incoming screen
 
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
 
-    hide screen incoming_monika
-
+    hide screen incoming_monika #hides monika incoming screen
 
     show mc happy at left
 
@@ -63,8 +56,8 @@ label start:
     "I fix up my bed before heading downstairs."
 
     scene bg kitchen
-    with dissolve
 
+    with dissolve
 
     stop music fadeout 1.0
 
@@ -72,8 +65,10 @@ label start:
 
     play music "Family bonds.mp3" volume 0.7
 
-#put mom art here
+    #put mom art here
+
     show mom happy at right
+
     with moveinright
 
     mom "Oh, you're up early, sweetie."
@@ -94,14 +89,17 @@ label start:
     mc "Sorry, it's just that I'm not feeling great right now."
 
     mc "Forget about it."
+
     show sis happy at left
+
     with moveinright
 
     sis "Aww, c'mon! You can't skip mac and cheese. That’s, like, your ultimate comfort food"
 
-
     "" "My sister, Monika, she the type of person that would mess with you for no reason at all."
+
     show sis happy at center
+
     with move
 
     "" "She has that energy where she effortlessly releases good vibes around her, even if I find her a bit annoying."
@@ -134,9 +132,10 @@ label start:
 
     "" "She elbows me while grabbing her own breakfast and walking away."
 
-
     show mom at right
+
     with moveinright
+
     mom "Aww, look at you two getting along, it's like how you both used to."
 
     mc "..."
@@ -148,8 +147,11 @@ label start:
     "" "After chowing down my food, I decide to go out for a walk."
 
     stop music fadeout 1.0
+
     #bright white light transition
+
     scene bg street
+
     with fade
 
     play music "Skips.mp3" volume 0.7
@@ -215,13 +217,11 @@ label start:
 
         mc "oh shii monika is calling.."
 
+        hide screen incoming_monika
 
         #DIALOGUES FOR STORE END HERE
 
         #MC DEATH SCENE STARTS HERE
-
-
-
 
         return
 
