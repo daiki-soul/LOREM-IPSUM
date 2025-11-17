@@ -47,9 +47,13 @@ label start:
     show screen incoming_monika
 
 
+
+
     
 
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
+
+    hide screen incoming_monika
 
 
     show mc happy at left
