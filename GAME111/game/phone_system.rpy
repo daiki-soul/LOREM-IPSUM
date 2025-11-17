@@ -25,10 +25,7 @@ init python:
         renpy.show_screen("phone_screen")
         renpy.show("incoming_monika.png")
 
-        def incoming_placeholder():
-        store.phone_open = True
-        renpy.show_screen("phone_screen")
-        renpy.show("incoming_placeholder.png")
+
     config.overlay_screens.append("phone_key_listener")
 
 
@@ -43,12 +40,6 @@ screen incoming_monika():
     zorder 1000         # very high layer
     add "images/incoming_monika.png"  # your phone image
 
-
-screen incoming_placeholder():
-    tag phone           # exclusive screen tag
-    zorder 1000         # very high layer
-    add "images/incoming_placeholder.png"  # your phone image
-    
 
 
 
