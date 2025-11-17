@@ -2,7 +2,7 @@
 
 #declare all characters here
 #can change color of character names, declare here
-
+    
 #MAIN CAST
 define mc = Character("old world mc")
 define mc2 = Character("new world mc")
@@ -11,6 +11,7 @@ define sis = Character("Monika")
 define f1 = Character("Kel")
 define td = Character("Truck Driver")
 
+    
 
 #NPCs
 define s = Character("Convenience store staff")
@@ -23,14 +24,14 @@ image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 
 #GAME START
 label start:
-
+    
     "(MC)... (MC)..? We miss you.."
     "Please.. just.. r-"
 
     "" "..."
 
     mc "Ugh.."
-
+    
     scene bg MC_room
     with fade
 
@@ -38,9 +39,18 @@ label start:
 #ACT 1
     "" "I check the clock"
 
+    
+
+
     "" "Holy shit how is it already 2PM?"
 
+    show screen incoming_monika
+
+
+    
+
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
+
 
     show mc happy at left
 
@@ -197,7 +207,9 @@ label start:
 
         f1 "Yeah, I figured."
 
+        show screen incoming_monika
 
+        mc "oh shii monika is calling.."
 
 
         #DIALOGUES FOR STORE END HERE
