@@ -2,7 +2,7 @@
 
 #declare all characters here
 #can change color of character names, declare here
-    
+
 #MAIN CAST
 define mc = Character("old world mc")
 define mc2 = Character("new world mc")
@@ -19,10 +19,10 @@ image bg MC_room = im.Scale("bg MC_room.png", 1920, 1080)
 image bg kitchen = im.Scale("bg kitchen.png", 1920, 1080)
 image bg street = im.Scale("bg street.png", 1920, 1080)
 image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
-
+image bg city = im.Scale("bg city.png", 1920, 1080)
 #GAME START
 label start:
-    
+
     "(MC)... (MC)..? We miss you.."
 
     "Please.. just.. r-"
@@ -30,7 +30,7 @@ label start:
     "" "..."
 
     mc "Ugh.."
-    
+
     scene bg MC_room
 
     with fade
@@ -72,7 +72,7 @@ label start:
     with moveinright
 
     mom "Oh, you're up early, sweetie."
- 
+
     "" "I give her a dead eyed look"
 
     mc "Yeah, very funny, Mom. I overslept again, I know that my sleep schedule's a mess."
@@ -158,6 +158,9 @@ label start:
 
     mc "Maybe this will properly wake me up."
 
+    scene bg city
+    with dissolve
+
     "" "I start walking down a familiar street, the sound of birds and distant traffic filling the air."
 
     "" "Come to think of it, I haven't been outside in a while.."
@@ -171,82 +174,102 @@ label start:
             jump choice_2
 
 
+label choice_1:
+    mc "The Park it is."
 
-    label choice_1:
-        mc "The Park it is."
-
-
-        return
-
-    label choice_2:
-        mc "Guess I should get something to drink first."
-
-        "" "I hastily walked to the nearest convenience store."
-        scene bg convenience store
-        with dissolve
-
-        "" "As I enter the store, I was instantly met with the sound of panel lights and the smell of cheap coffee."
-
-        mc "Lets see.. An energy drink sounds good right now"
-
-        s "Thanks, come again!"
-
-        "" "As I grab the energy drink at the top shelf of the glass fridge, I heard a familiar voice call out to me."
-
-        s "(MC)? Is that you?"
-
-        "" "No way.."
-
-        f1 "Hey it's actually you!"
-        show boy happy at right
-        with moveinright
-
-        "" "The person standing in front of me is an old friend, Kel, we both used to hangout alot in high school."
-
-        "" "After graduation, we kinda drifted apart."
-
-        mc "Oh, hey, long time no see."
-
-        f1 "Nonchalant as always, huh?"
-
-        mc "..."
-
-        f1 "Yeah, I figured."
-
-        show screen incoming_monika
-
-        mc "oh shii monika is calling.."
-
-        hide screen incoming_monika
-
-        #DIALOGUES FOR STORE END HERE
-
-        #MC DEATH SCENE STARTS HERE
-
-        return
+    return
 
 
+label choice_2:
+    mc "Guess I should get something to drink first."
+
+    "" "I hastily walked to the nearest convenience store."
+    scene bg convenience store
+    with dissolve
+
+    "" "As I enter the store, I was instantly met with the sound of panel lights and the smell of cheap coffee."
+
+    mc "Lets see.. An energy drink sounds good right now"
+
+    s "Thanks, come again!"
+
+    "" "As I grab the energy drink at the top shelf of the glass fridge, I heard a familiar voice call out to me."
+
+    s "(MC)? Is that you?"
+
+    "" "No way.."
+
+    f1 "Hey it's actually you!"
+    show boy happy at right
+    with moveinright
+
+    "" "The person standing in front of me is an old friend, Kel, we both used to hangout alot in high school."
+
+    "" "After graduation, we kinda drifted apart."
+
+    mc "Oh, hey, long time no see."
+
+    f1 "Nonchalant as always, huh?"
+
+    mc "..."
+
+    f1 "Yeah, I figured."
+
+    f1 "Dude, you wanna hangout after shift?"
+
+    menu:
+        "Yes":
+            jump choice_1_yes
+        "No":
+            jump choice_2_no
 
 
+label choice_1_yes:
+    "Yeah sure, whatever."
+    f1 "Awesome, you mind waiting till 5pm?"
+
+    mc "Yeah for sure, bro, I'll be waiting outside yeah?"
+
+    f1 "Sweet, see you later man."
+
+    f1 "Oh wait can I get your contact just incase I get off early?"
+
+    mc "Oh shit, I almost forgot."
+
+    "" "And I'm about to hand out my cheap ass android phone to an old friend of mine.. Talk about minus aura."
+
+    jump store_end
 
 
+label choice_2_no:
+    mc "Sorry man, a little busy today"
+
+    f1 "Welp, see you around I suppose."
+
+    f1 "Can I at least get your contact, Dude?"
+
+    mc "..."
+
+    mc "Okay, here."
+
+    "" "And I'm about to hand out my cheap ass android phone to an old friend of mine.. Talk about minus aura."
+
+    "" "After typing my contact into his phone, I promptly grab my phone back and walked towards the glass door, with my drinks in hand."
+
+    "" "I raise my hands up to wave, before finally getting outside. I swear I saw him smirk when he looked at my phone."
+
+    f1 "Alright, see you, man."
+
+    jump store_end
 
 
+label store_end:
+    scene bg city
 
-    #NOTES FOR JOSH!!! if transitions to you aren't working, toggle the transition option
-    # at the "preferences" bar on the main menu.
-    #We should find a way to remove that toggle there so that transitions are on by default.
+    "" "Man, I can't believe he is now working at the convenience store we all used to hangout in."
 
+    #DIALOGUES FOR STORE END HERE
 
+    #MC DEATH SCENE STARTS HERE
 
-
-
-
-
-
-#audio, bg images, sprites used here are temporary for now until arlo releases official art
-#may use the temporary stuff as official part of game, but try not to
-
-
-#GAME END
-return
+    return
