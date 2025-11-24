@@ -1000,7 +1000,7 @@ screen Credits():
                 spacing 12
                 xalign 0.5
 
-                text _("GAME111") size 36
+                text _("ISEKAI: A lie") size 36
                 text _("Lead Programmer: daikisoul") size 28
                 text _("Lead Artist: P_DAY") size 28
                 text _("Created by: L.Dezu") size 28
