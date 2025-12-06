@@ -234,7 +234,7 @@ label choice_1_yes:
 
     f1 "Oh wait can I get your contact just incase I get off early?"
 
-    mc "Oh shit, I almost forgot."
+    mc "Damn, almost forgot, yeah yeah sure."
 
     "" "And I'm about to hand out my cheap ass android phone to an old friend of mine.. Talk about minus aura."
 
@@ -265,8 +265,23 @@ label choice_2_no:
 
 label store_end:
     scene bg city
+    with dissolve
 
     "" "Man, I can't believe he is now working at the convenience store we all used to hangout in."
+
+    "" ""
+
+    "" "I roam around to check the arcade we also used to hangout in"
+
+    mc "Man, this brings back so many memories."
+
+    "" "Maybe I should ask him to go here after his shift ends."
+
+    show screen incoming_monika
+    "" "I receive a call from my phone"
+
+
+    "" ""
 
     #DIALOGUES FOR STORE END HERE
 
