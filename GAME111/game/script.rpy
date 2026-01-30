@@ -71,6 +71,8 @@ label start:
 
     show mom happy at right
 
+    $ ambient.play("audio/ambient/rain.mp3")
+
     with moveinright
 
     mom "Oh, you're up early, sweetie."
@@ -82,6 +84,9 @@ label start:
     mom "I was just kidding. Come eat, I got you your favorite!"
 
     mc "Mac and cheese again? Seriously?"
+
+    $ ambient.stop()
+
 
     mom "..."
     hide mom
