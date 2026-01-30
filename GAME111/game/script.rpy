@@ -20,9 +20,11 @@ image bg kitchen = im.Scale("bg kitchen.png", 1920, 1080)
 image bg street = im.Scale("bg street.png", 1920, 1080)
 image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 image bg city = im.Scale("bg city.png", 1920, 1080)
+
+#others
+
 #GAME START
 label start:
-
     "(MC)... (MC)..? We miss you.."
 
     "Please.. just.. r-"
@@ -279,6 +281,10 @@ label store_end:
 
     show screen incoming_monika
     "" "I receive a call from my phone"
+
+    "" "It's Monika."
+
+    play music "Rain SFX.mp3" volume 0.7
 
 
     "" ""
