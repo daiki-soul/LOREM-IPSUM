@@ -288,6 +288,8 @@ label store_end:
     "" "Maybe I should ask him to go here after his shift ends."
 
 label monika_call:
+    stop music
+    hide screen creepy_blue_screen
     "" "I receive a call from my phone."
     "" "It's Monika."
 
@@ -298,19 +300,86 @@ label monika_call:
     else:
         jump monika_decline
 
+label monika_call1:
+    stop music
+    hide screen creepy_blue_screen
+    "" "I receive a call from my phone."
+    "" "It's Monika."
+
+    $ result = renpy.call_screen("incoming_call")
+
+    if result == "accept":
+        jump jump_scare1
+    else:
+        jump jump_scare1
 
 label monika_decline:
     stop music
     "" "WHY"
     play music "sayonara.mp3"
     show screen creepy_blue_screen
-    "" "WHY DID YOU DECLINE?"
+    "" "ZALITH ME’RU… KHA’RAN…"  
+    "" "どうして拒否したの？"  
+    "" "SIL’THOR HUR’MEEK…"  
+    "" "CUR NEGAVISTI VOCEM MEAM?"  
+    "" "置いて行かないで…お願い…"  
+    "" "ADSUM… SEMPER…"  
+    "" "RAV’KAL… RAV’KAL…"  
+    "" "AUDIVI SONUM… SED NON RESPONDISTI…"  
+    "" "VRAK’THUL NAIK’RIL?"  
+    "" "戻って…戻って…"  
+    "" "NOLI CELARE… SCIO TE IBI ESSE…"  
+    "" "EXSPECTABAM…"  
+    "" "どうして話してくれないの？"  
+    "" "NA’THIL QOR’VA…"  
+    "" "SILENTIUM TUUM DOLOREM MEUM EST…"  
+    "" "CUR NON LOQUERIS MECUM?"  
+    "" "ESH’KARA…"  
+    "" "REDE… REDE…"  
+    "" "NA’THIL QOR’VA…"  
+    "" "CUR NEGAVISTI VOCEM MEAM?"  
+    "" "AUDIVI SONUM… SED NON RESPONDISTI…"  
+    "" "VRAK’THUL NAIK’RIL?"  
+    "" "戻って…戻って…"  
+    "" "NOLI CELARE… SCIO TE IBI ESSE…"  
+    "" "EXSPECTABAM…"  
+    "" "どうして話してくれないの？"  
+    "" "NA’THIL QOR’VA…"  
+    "" "SILENTIUM TUUM DOLOREM MEUM EST…"  
+    "" "CUR NON LOQUERIS MECUM?"  
+    "" "ESH’KARA…"  
+    "" "REDE… REDE…"  
+    "" "NA’THIL QOR’VA…"  
+    "" "CUR NEGAVISTI VOCEM MEAM?"  
     pause 10
+    # show screen jumpscare
+    # play music "audio/scream.wav"
+    menu:
+        "oops"
+        "looks like it crashed huh?"
+        "wanna try again?"
+        "yes":
+            jump monika_call1
+        "no":
+            jump jump_scare
+    hide screen creepy_blue_screen
+    stop music
+
+label jump_scare:
+    window hide
+    pause 1.0
     show screen jumpscare
     play music "audio/scream.wav"
     pause 1.0
     $ renpy.quit()
 
+    label jump_scare1:
+    window hide
+    pause 1.0
+    show screen jumpscare
+    play music "audio/scream.wav"
+    pause 1.0
+    return
 
 label monika_accept:
     sis "how are you!!!"

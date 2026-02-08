@@ -16,4 +16,4 @@ transform zoom_in(duration=10.0, start_scale=3.0, end_scale=1.2):
     linear duration zoom end_scale
 
 screen creepy_blue_screen():
-    add "images/bluescreen.png" at zoom_in(5.0, 1.0, 1.2) xysize (config.screen_width, config.screen_height)
+    add "images/bluescreen.png" at zoom_in(60.0, 1.0, 1.2) xysize (config.screen_width, config.screen_height)
