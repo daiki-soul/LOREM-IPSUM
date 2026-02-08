@@ -21,6 +21,8 @@ image bg street = im.Scale("bg street.png", 1920, 1080)
 image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 image bg city = im.Scale("bg city.png", 1920, 1080)
 image jumpscare = "images/jumpscare.png"
+image bg sayonara = im.Scale("bg sayonara.png", 1920, 1080)
+image monika = "images/monika.png"
 
 
 
@@ -301,15 +303,19 @@ label monika_call:
         jump monika_decline
 
 label monika_call1:
+
     stop music
+    scene bg city
+    hide bg sayonara
     hide screen creepy_blue_screen
+    scene bg city
     "" "I receive a call from my phone."
     "" "It's Monika."
 
     $ result = renpy.call_screen("incoming_call")
 
     if result == "accept":
-        jump jump_scare1
+        jump monika_accept
     else:
         jump jump_scare1
 
@@ -317,6 +323,7 @@ label monika_decline:
     stop music
     "" "WHY"
     play music "sayonara.mp3"
+    scene bg sayonara
     show screen creepy_blue_screen
     "" "ZALITH ME’RU… KHA’RAN…"  
     "" "どうして拒否したの？"  
@@ -325,35 +332,9 @@ label monika_decline:
     "" "置いて行かないで…お願い…"  
     "" "ADSUM… SEMPER…"  
     "" "RAV’KAL… RAV’KAL…"  
-    "" "AUDIVI SONUM… SED NON RESPONDISTI…"  
-    "" "VRAK’THUL NAIK’RIL?"  
-    "" "戻って…戻って…"  
-    "" "NOLI CELARE… SCIO TE IBI ESSE…"  
-    "" "EXSPECTABAM…"  
-    "" "どうして話してくれないの？"  
-    "" "NA’THIL QOR’VA…"  
-    "" "SILENTIUM TUUM DOLOREM MEUM EST…"  
-    "" "CUR NON LOQUERIS MECUM?"  
-    "" "ESH’KARA…"  
-    "" "REDE… REDE…"  
-    "" "NA’THIL QOR’VA…"  
-    "" "CUR NEGAVISTI VOCEM MEAM?"  
-    "" "AUDIVI SONUM… SED NON RESPONDISTI…"  
-    "" "VRAK’THUL NAIK’RIL?"  
-    "" "戻って…戻って…"  
-    "" "NOLI CELARE… SCIO TE IBI ESSE…"  
-    "" "EXSPECTABAM…"  
-    "" "どうして話してくれないの？"  
-    "" "NA’THIL QOR’VA…"  
-    "" "SILENTIUM TUUM DOLOREM MEUM EST…"  
-    "" "CUR NON LOQUERIS MECUM?"  
-    "" "ESH’KARA…"  
-    "" "REDE… REDE…"  
-    "" "NA’THIL QOR’VA…"  
-    "" "CUR NEGAVISTI VOCEM MEAM?"  
+
     pause 10
-    # show screen jumpscare
-    # play music "audio/scream.wav"
+    show monika happy onlayer overlay at right zorder 999
     menu:
         "oops"
         "looks like it crashed huh?"
@@ -362,7 +343,8 @@ label monika_decline:
             jump monika_call1
         "no":
             jump jump_scare
-    hide screen creepy_blue_screen
+    
+    hide screen creepy_blue_screen  
     stop music
 
 label jump_scare:
@@ -382,6 +364,7 @@ label jump_scare:
     return
 
 label monika_accept:
+    play music "Free time.mp3"
     sis "how are you!!!"
     mc "yeah im good"
     mc "wait i gotta go see ya"
