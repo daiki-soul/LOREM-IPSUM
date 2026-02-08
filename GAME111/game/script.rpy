@@ -307,7 +307,7 @@ label monika_decline:
     "" "WHY DID YOU DECLINE?"
     pause 10
     show screen jumpscare
-    play music "audio/scream.wav" fadein 0
+    play music "audio/scream.wav"
     pause 1.0
     $ renpy.quit()
 
@@ -315,7 +315,8 @@ label monika_decline:
 label monika_accept:
     sis "how are you!!!"
     mc "yeah im good"
-    mc "i gotta go see ya"
+    mc "wait i gotta go see ya"
+    sis "oh.. okay."
     jump after_call_end
 
 label after_call_end:
