@@ -339,7 +339,6 @@ label monika_decline:
             jump monika_call1
         "no":
             jump jump_scare
-    hide screen creepy_blue_screen  
     stop music
 
 label jump_scare:#quits the game abruptly
@@ -359,11 +358,13 @@ label jump_scare1:#returns to the menu
     return
 
 label monika_accept:#if player accepts
+    show screen ongoing_call
     play music "Free time.mp3"
     sis "how are you!!!"
     mc "yeah im good"
     mc "wait i gotta go see ya"
     sis "oh.. okay."
+    hide screen ongoing_call
     jump after_call_end
 
 label after_call_end:#the story

@@ -21,4 +21,8 @@ screen incoming_call():
         ypos 0.659
         action Return("decline")
 
+screen ongoing_call():
+    add "ongoing_monika.png"
+    zorder 100
+   
         
