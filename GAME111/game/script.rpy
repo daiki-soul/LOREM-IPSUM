@@ -291,10 +291,8 @@ label monika_call:
     $ result = renpy.call_screen("incoming_call")
 
     if result == "accept":
-        "" "accept"
         jump monika_accept
     else:
-        "" "decline"
         jump monika_decline
 
 
