@@ -20,6 +20,9 @@ image bg kitchen = im.Scale("bg kitchen.png", 1920, 1080)
 image bg street = im.Scale("bg street.png", 1920, 1080)
 image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 image bg city = im.Scale("bg city.png", 1920, 1080)
+image jumpscare = "images/jumpscare.png"
+
+
 
 #others
 
@@ -297,21 +300,23 @@ label monika_call:
 
 
 label monika_decline:
+
     stop music
     "" "WHY"
     play music "sayonara.mp3"
+
     show screen creepy_blue_screen
     "" "WHY DID YOU DECLINE?"
-    ""
-    ""
-    ""
-    ""
-    ""
-    ""
-    ""
-    ""
-    ""
-    $ renpy.full_restart()
+
+    pause 10
+
+    # Correct way to show jumpscare fullscreen
+    show screen jumpscare
+    play music "audio/scream.wav" fadein 0
+    pause 1.0
+
+    $ renpy.quit()
+
 
 label monika_accept:
     sis "how are you!!!"
