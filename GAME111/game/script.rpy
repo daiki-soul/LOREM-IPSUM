@@ -298,12 +298,13 @@ label monika_call:
         jump monika_decline
 
 
-
-
     play music "Rain SFX.mp3" volume 0.7
 
+label monika_decline:
+    "" "holi sheet mc died"
 
-    "" ""
+label monika_accept:
+    "" "holi sheet mc died"
 
     #DIALOGUES FOR STORE END HERE
 
