@@ -304,7 +304,7 @@ label monika_decline:
     "" "holi sheet mc died"
 
 label monika_accept:
-    "" "holi sheet mc died"
+    "" "holi sheet mc died tragic"
 
     #DIALOGUES FOR STORE END HERE
 
