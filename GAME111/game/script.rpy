@@ -284,7 +284,7 @@ label store_end:
 
     "" "Maybe I should ask him to go here after his shift ends."
 
-label monika_call:#incoming call
+label monika_call:
     "" "I receive a call from my phone."
     "" "It's Monika."
 
@@ -294,16 +294,19 @@ label monika_call:#incoming call
         jump monika_accept
     else:
         jump monika_decline
-        #/incoming call
 
-
-    play music "Rain SFX.mp3" volume 0.7
 
 label monika_decline:
     "" "holi sheet mc died"
+    jump after_call_end
 
 label monika_accept:
     "" "holi sheet mc died tragic"
+    jump after_call_end
+
+label after_call_end:
+    play music "Rain SFX.mp3" volume 0.7
+    "" "adakasdjks"
 
     #DIALOGUES FOR STORE END HERE
 
