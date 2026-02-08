@@ -1688,5 +1688,27 @@ label splashscreen:
     pause 2
 
     stop music fadeout 2.0
-
     return
+
+
+
+transform flicker():
+
+    linear 0.05 alpha 0.7
+    linear 0.05 alpha 1.0
+    repeat
+
+screen creepy_blue_screen():
+    
+
+    add Solid("#0000FF")
+
+    add Solid("#FFFFFF") at flicker
+
+    text "SYSTEM ERROR..." at truecenter size 50 color "#FFFFFF" outlines [(2, "#000000")]
+    text "Do not turn off your device." at Position(xalign=0.5, yalign=0.6) size 30 color "#FFFFFF"
+
+
+
+
+

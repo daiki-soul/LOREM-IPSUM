@@ -297,16 +297,34 @@ label monika_call:
 
 
 label monika_decline:
-    "" "holi sheet mc died"
-    jump after_call_end
+    "" "WHY"
+
+    stop music
+    play music "sayonara.mp3"
+    show screen creepy_blue_screen
+    with fade
+
+    "" "WHY DID YOU DECLINED?"
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    $ renpy.full_restart()
 
 label monika_accept:
-    "" "holi sheet mc died tragic"
+    sis "how are you!!!"
+    mc "yeah im good"
+    mc "i gotta go see ya"
     jump after_call_end
 
 label after_call_end:
     play music "Rain SFX.mp3" volume 0.7
-    "" "adakasdjks"
+    "" "eitherway, mc died"
 
     #DIALOGUES FOR STORE END HERE
 
