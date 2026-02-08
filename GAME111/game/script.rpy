@@ -284,10 +284,21 @@ label store_end:
 
     "" "Maybe I should ask him to go here after his shift ends."
 
-    show screen incoming_monika
-    "" "I receive a call from my phone"
-
+label monika_call:
+    "" "I receive a call from my phone."
     "" "It's Monika."
+
+    $ result = renpy.call_screen("incoming_call")
+
+    if result == "accept":
+        "" "accept"
+        jump monika_accept
+    else:
+        "" "decline"
+        jump monika_decline
+
+
+
 
     play music "Rain SFX.mp3" volume 0.7
 

@@ -4,7 +4,5 @@
         "**/*.rpa": true,
         "**/*.rpymc": true,
         "**/cache/": true
-    },
-    "renpyWarp.sdkPath": "c:\\Users\\daiki\\Documents\\renpy-8.4.1-sdk",
-    "python.REPL.enableREPLSmartSend": false
+    }
 }
