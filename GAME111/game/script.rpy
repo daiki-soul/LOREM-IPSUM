@@ -307,7 +307,7 @@ label monika_call1:
     scene bg city
     "" "I receive a call from my phone."
     "" "It's Monika."
-    $ result = renpy.call_screen("incoming_call")
+    $ result = renpy.call_screen("incoming_call")#button func
     if result == "accept":
         jump monika_accept
     else:
