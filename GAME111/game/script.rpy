@@ -71,7 +71,7 @@ label start:
 
     show mom happy at right
 
-    $ ambient.play("audio/ambient/rain.mp3")
+    $ ambient.play("audio/ambient/rain.mp3")#ambient
 
     with moveinright
 
@@ -284,7 +284,7 @@ label store_end:
 
     "" "Maybe I should ask him to go here after his shift ends."
 
-label monika_call:
+label monika_call:#incoming call
     "" "I receive a call from my phone."
     "" "It's Monika."
 
@@ -294,6 +294,7 @@ label monika_call:
         jump monika_accept
     else:
         jump monika_decline
+        #/incoming call
 
 
     play music "Rain SFX.mp3" volume 0.7
