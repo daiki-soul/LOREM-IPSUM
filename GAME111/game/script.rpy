@@ -301,7 +301,7 @@ label monika_decline:
     "" "WHY"
     play music "sayonara.mp3"
     show screen creepy_blue_screen
-    "" "WHY DID YOU DECLINED?"
+    "" "WHY DID YOU DECLINE?"
     ""
     ""
     ""
