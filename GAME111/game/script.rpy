@@ -291,18 +291,15 @@ label store_end:
 
 label monika_call:
     hide screen creepy_blue_screen
-    "" "I receive a call from my phone."
+    "" "I received a call from my phone."
     "" "It's Monika."
-
     $ result = renpy.call_screen("incoming_call")
-
     if result == "accept":
         jump monika_accept
     else:
         jump monika_decline
 
 label monika_call1:
-
     stop music
     scene bg city
     hide bg sayonara
@@ -310,9 +307,7 @@ label monika_call1:
     scene bg city
     "" "I receive a call from my phone."
     "" "It's Monika."
-
     $ result = renpy.call_screen("incoming_call")
-
     if result == "accept":
         jump monika_accept
     else:
@@ -334,35 +329,36 @@ label monika_decline:
 
     pause 10
     show monika happy onlayer overlay at right zorder 999
+    "oops"
+    show monika happy onlayer overlay at right zorder 999
+    "looks like it crashed huh?"
+    show monika happy onlayer overlay at right zorder 999
     menu:
-        "oops"
-        "looks like it crashed huh?"
         "wanna try again?"
         "yes":
             jump monika_call1
         "no":
             jump jump_scare
-    
     hide screen creepy_blue_screen  
     stop music
 
-label jump_scare:
+label jump_scare:#quits the game abruptly
     window hide
-    pause 1.0
+    pause 10
     show screen jumpscare
     play music "audio/scream.wav"
-    pause 1.0
+    pause 2
     $ renpy.quit()
 
-    label jump_scare1:
+label jump_scare1:#returns to the menu
     window hide
-    pause 1.0
+    pause 10
     show screen jumpscare
     play music "audio/scream.wav"
-    pause 1.0
+    pause 2
     return
 
-label monika_accept:
+label monika_accept:#if player accepts
     play music "Free time.mp3"
     sis "how are you!!!"
     mc "yeah im good"
@@ -370,7 +366,7 @@ label monika_accept:
     sis "oh.. okay."
     jump after_call_end
 
-label after_call_end:
+label after_call_end:#the story
     play music "Rain SFX.mp3" volume 0.7
     "" "eitherway, mc died"
 
