@@ -297,13 +297,10 @@ label monika_call:
 
 
 label monika_decline:
-    "" "WHY"
-
     stop music
+    "" "WHY"
     play music "sayonara.mp3"
     show screen creepy_blue_screen
-    with fade
-
     "" "WHY DID YOU DECLINED?"
     ""
     ""
