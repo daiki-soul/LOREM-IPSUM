@@ -290,7 +290,6 @@ label store_end:
     "" "Maybe I should ask him to go here after his shift ends."
 
 label monika_call:
-    stop music
     hide screen creepy_blue_screen
     "" "I receive a call from my phone."
     "" "It's Monika."
