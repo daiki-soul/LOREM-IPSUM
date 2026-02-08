@@ -36,9 +36,9 @@ screen phone_key_listener():
 
 
 screen incoming_monika():
-    tag phone           # exclusive screen tag
-    zorder 1000         # very high layer
-    add "images/incoming_monika.png"  # your phone image
+    tag phone    
+    zorder 1000       
+    add "images/incoming_monika.png"  
 
 
 

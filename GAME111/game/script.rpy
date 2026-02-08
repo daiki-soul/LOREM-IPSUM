@@ -300,21 +300,15 @@ label monika_call:
 
 
 label monika_decline:
-
     stop music
     "" "WHY"
     play music "sayonara.mp3"
-
     show screen creepy_blue_screen
     "" "WHY DID YOU DECLINE?"
-
     pause 10
-
-    # Correct way to show jumpscare fullscreen
     show screen jumpscare
     play music "audio/scream.wav" fadein 0
     pause 1.0
-
     $ renpy.quit()
 
 
