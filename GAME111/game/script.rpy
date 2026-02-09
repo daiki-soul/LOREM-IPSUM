@@ -4,15 +4,36 @@
 #can change color of character names, declare here
 
 #MAIN CAST
-define mc = Character("Arlo")
-define mc2 = Character("Lawrence")
-define mom = Character("Mom")
-define sis = Character("Monika")
-define f1 = Character("Kel")
-define td = Character("Truck Driver")
+define a = Character("???") #placeholder for unknown
+define mc = Character("Arlo") #original mc
+define mc2 = Character("Lawrence") #unofficial name, the isekai'd new body of mc
+define mom = Character("Mom") #mc and mc2 mom
+define dad = Character("Dad") #dead from both mc and mc2 world
+define sis = Character("Monika") #mc and mc2 sister
+define kel = Character("Kiel") #mc bestfriend, mc2 classmate (something went wrong)
+define hari = Character("Hari") #m (basilo bestfriend)
+define bas = Character("Basilo") #m (hari and basilo best friends who compete for Chika)
+define omi = Character("Omi") #m but femboy
+define chi = Character("Chika") #f the beautiful shy girl
+define wagi = Character("Waguri") #f
+define ros = Character("Rosie") #f
+define yui = Character("Yui") #f (wagi, ros, yui are childhood friends)
+
+#SIDE CHARACTERS
+define ichi = Character("Ichika") #f classmate
+define paul = Character("Paul") #m school delinquent
+define emu = Character("Emu") #f someone who dies later on (pretends to be important character early in the story) (this ending for her depends on the story flow and route)
+define ari = Character("Ari")#f emu's friend
+define ku = Character("Kuro")#m the otaku
+
+
+
 
 #NPCs
 define s = Character("Convenience store staff")
+define cm = Character("Classmate")
+define npc = Character("Stranger")
+define td = Character("Truck Driver")
 
 #declare image bg resolutions here
 image bg MC_room = im.Scale("bg MC_room.png", 1920, 1080)
@@ -23,6 +44,24 @@ image bg city = im.Scale("bg city.png", 1920, 1080)
 image jumpscare = "images/jumpscare.png"
 image bg sayonara = im.Scale("bg sayonara.png", 1920, 1080)
 image monika = "images/monika.png"
+
+#defining positions
+transform mid_left:
+    xalign 0.35
+    yalign 1.0
+
+transform mid_right:
+    xalign 0.65
+    yalign 1.0
+
+transform close_left:
+    xalign 0.20
+    yalign 1.0
+
+transform close_right:
+    xalign 0.80
+    yalign 1.0
+
 
 
 
@@ -189,7 +228,7 @@ label start:
 label choice_1:
     mc "The Park it is."
 
-    return
+
 
 
 label choice_2:
@@ -199,11 +238,16 @@ label choice_2:
     scene bg convenience store
     with dissolve
 
+    stop music
+    play music "Convenience store.mp3" volume 0.7
+
     "" "As I enter the store, I was instantly met with the sound of panel lights and the smell of cheap coffee."
 
     mc "Lets see.. An energy drink sounds good right now"
 
-    s "Thanks, come again!"
+    npc "Oh yeah, please put it in the bag."
+
+    s "Thanks sir, come again!"
 
     "" "As I grab the energy drink at the top shelf of the glass fridge, I heard a familiar voice call out to me."
 
@@ -211,8 +255,8 @@ label choice_2:
 
     "" "No way.."
 
-    f1 "Hey it's actually you!"
-    show boy happy at right
+    kel "Hey it's actually you!"
+    show kiel happy at right
     with moveinright
 
     "" "The person standing in front of me is an old friend, Kel, we both used to hangout alot in high school."
@@ -221,13 +265,13 @@ label choice_2:
 
     mc "Oh, hey, long time no see."
 
-    f1 "Nonchalant as always, huh?"
+    kel "Nonchalant as always, huh?"
 
     mc "..."
 
-    f1 "Yeah, I figured."
+    kel "Yeah, I figured."
 
-    f1 "Dude, you wanna hangout after shift?"
+    kel "Dude, you wanna hangout after shift?"
 
     menu:
         "Yes":
@@ -238,13 +282,13 @@ label choice_2:
 
 label choice_1_yes:
     "Yeah sure, whatever."
-    f1 "Awesome, you mind waiting till 5pm?"
+    kel "Awesome, you mind waiting till 5pm?"
 
     mc "Yeah for sure, bro, I'll be waiting outside yeah?"
 
-    f1 "Sweet, see you later man."
+    kel "Sweet, see you later man."
 
-    f1 "Oh wait can I get your contact just incase I get off early?"
+    kel "Oh wait can I get your contact just incase I get off early?"
 
     mc "Damn, almost forgot, yeah yeah sure."
 
@@ -256,9 +300,9 @@ label choice_1_yes:
 label choice_2_no:
     mc "Sorry man, a little busy today"
 
-    f1 "Welp, see you around I suppose."
+    kel "Welp, see you around I suppose."
 
-    f1 "Can I at least get your contact, Dude?"
+    kel "Can I at least get your contact, Dude?"
 
     mc "..."
 
@@ -270,7 +314,7 @@ label choice_2_no:
 
     "" "I raise my hands up to wave, before finally getting outside. I swear I saw him smirk when he looked at my phone."
 
-    f1 "Alright, see you, man."
+    kel "Alright, see you, man."
 
     jump store_end
 
@@ -289,6 +333,30 @@ label store_end:
 
     "" "Maybe I should ask him to go here after his shift ends."
 
+    a "Is that who I think it is??"
+    show hari happy at left
+    with moveinleft
+
+    a "Yeah! That's definitely him!"
+    show bas happy at right
+    with moveinright
+
+    a "..."
+    show omi happy at close_right
+    with moveinleft
+
+
+
+
+
+
+
+
+
+
+
+
+
 label monika_call:
     hide screen creepy_blue_screen
     "" "I received a call from my phone."
@@ -298,6 +366,41 @@ label monika_call:
         jump monika_accept
     else:
         jump monika_decline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 label monika_call1:
     stop music
