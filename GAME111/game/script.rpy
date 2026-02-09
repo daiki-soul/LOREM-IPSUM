@@ -4,8 +4,8 @@
 #can change color of character names, declare here
 
 #MAIN CAST
-define mc = Character("old world mc")
-define mc2 = Character("new world mc")
+define mc = Character("Arlo")
+define mc2 = Character("Lawrence")
 define mom = Character("Mom")
 define sis = Character("Monika")
 define f1 = Character("Kel")
@@ -50,11 +50,11 @@ label start:
 
     "" "Holy shit how is it already 2PM?"
 
-    show screen incoming_monika #to show monika incoming screen
+    show screen time #to show monika incoming screen
 
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
 
-    hide screen incoming_monika #hides monika incoming screen
+    hide screen time #hides monika incoming screen
 
     show mc happy at left
 
@@ -329,6 +329,7 @@ label monika_decline:
 
     pause 10
     show monika happy onlayer overlay at right zorder 999
+    stop music
     "oops"
     show monika happy onlayer overlay at right zorder 999
     "looks like it crashed huh?"
