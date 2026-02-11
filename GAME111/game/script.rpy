@@ -93,6 +93,7 @@ label start:
 
     scene bg MC_room
 
+
     with fade
 
     play music "DDLC bgm.mp3" volume 0.7
@@ -100,6 +101,7 @@ label start:
     #ACT 1
 
     "" "I check the clock"
+
 
     "" "Holy shit how is it already 2PM?"
 
@@ -388,6 +390,29 @@ label store_end:
     "" "[bas] should probably stop teasing him now or else they'd get into a fight like they always do.."
 
     omi "G-Guys.. cut it out.."
+
+
+
+
+
+
+
+
+# label monika_call:
+#     hide screen creepy_blue_screen
+#     "" "I received a call from my phone."
+#     "" "It's Monika."
+#     $ result = renpy.call_screen("incoming_call")
+#     if result == "accept":
+#         jump monika_accept
+#     else:
+#         jump monika_decline
+
+
+
+
+
+
 
 
 
