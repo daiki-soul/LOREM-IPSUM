@@ -87,13 +87,15 @@ label start:
 
     "" "I check the clock"
 
+    show screen time_2pm #to show monika incoming screen
+
     "" "Holy shit how is it already 2PM?"
 
-    show screen time #to show monika incoming screen
+
 
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
 
-    hide screen time #hides monika incoming screen
+    hide screen time_2pm #hides monika incoming screen
 
     show mc happy at left
 
