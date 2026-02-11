@@ -43,6 +43,8 @@ image bg kitchen = im.Scale("bg kitchen.png", 1920, 1080)
 image bg street = im.Scale("bg street.png", 1920, 1080)
 image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 image bg city = im.Scale("bg city.png", 1920, 1080)
+image bg arcade = im.Scale("bg arcade.jpg", 1920, 1080)
+image bg arcade2 = im.Scale("bg arcade2.jpg", 1920, 1080)
 image jumpscare = "images/jumpscare.png"
 image bg sayonara = im.Scale("bg sayonara.png", 1920, 1080)
 image monika = "images/monika.png"
@@ -63,6 +65,13 @@ transform close_left:
 transform close_right:
     xalign 0.80
     yalign 1.0
+
+transform run_left:
+    linear 0.25 xalign -0.5
+
+transform run_right:
+    linear 0.25 xalign 1.5
+
 
 
 
@@ -325,6 +334,7 @@ label choice_2_no:
     "" "I raise my hands up to wave, before finally getting outside. I swear I saw him smirk when he looked at my phone."
 
     kel "Alright, see you, man."
+    stop music fadeout 1.0
 
     jump store_end
 
@@ -332,10 +342,9 @@ label choice_2_no:
 label store_end:
     scene bg city
     with dissolve
+    play music "Simplicities.mp3" volume 0.7
 
     "" "Man, I can't believe he is now working at the convenience store we all used to hangout in."
-
-    "" ""
 
     "" "I roam around to check the arcade we also used to hangout in"
 
@@ -357,7 +366,7 @@ label store_end:
 
     "" "..?"
 
-    hari "BROOO it's actually you!"
+    hari "BROOOO is that you?!"
 
     bas "No way.. I thought you moved or something.."
 
@@ -387,7 +396,172 @@ label store_end:
 
     "" "[bas] should probably stop teasing him now or else they'd get into a fight like they always do.."
 
+    hari "Why you little!—"
+
     omi "G-Guys.. cut it out.."
+
+    omi "..[mc] is with us."
+
+    mc "..."
+
+    hari "Oh, right.. excuse me.."
+
+    bas "Heh, sorry man, just wanted to tease you like old times."
+
+    hari "..."
+
+    hari "So, [mc] been a while, huh?"
+
+    mc "Yeah.. it really has.."
+
+    bas "Guys lets hangout like we used to! Since [mc] is here!"
+
+    kel "Yo, what's going on guys."
+    show kel happy at center
+    with moveinleft
+
+    hari "It's about time you showed up."
+
+    kel "Heh.. sorry, shift was tight today."
+
+    omi "It's okay, [kel], I understand."
+
+    bas "So, where do you guys wanna go?"
+
+    bas "I was thinking that we'd hangout at our good ol' arcade."
+
+    omi "Oh yeah! [hari] used to lose all the time to [kel]! Haha!"
+
+    omi "XD"
+
+    hari "...are you guys kidding me? I can beat you all with one hand."
+
+    bas "Sure you can, I'm sure you use that right hand to jack off all the time, I wouldn't be surprised!"
+
+    hari "Oh this time you're gonna get it.."
+
+    "" "[bas] runs away and enters the arcade with [hari] chasing him with a completely red face. He sure is one heck of a fuse."
+    show hari at run_right
+
+
+
+    omi "[bas]! That's rude!"
+    show bas at run_right
+    "" "[omi] follows them both into the arcade, leaving just me and [kel] behind."
+    show omi at run_right
+
+    "" "[kel] smiles at me"
+
+    kel "It's just like old times, huh?"
+
+    mc "Heh.. real.."
+
+    mc "And they went inside our favorite arcade. I hope they won't cause too much trouble."
+
+    kel "We should probably follow them. Come on."
+
+    #insert arcade bg
+    scene bg arcade
+    with fade
+    stop music fadeout 1.0
+
+    "We ended up drifting into the old arcade like nothing had changed."
+
+    play music "Happenings.mp3"
+
+    "I spot [hari] and [bas] already playing a game called Tokken 6. With Omi watching with starry eyes as the two fight it out in the game."
+
+    hari "LOSER BUYS DRINKS!"
+
+    bas "You’re on."
+
+    mc "I already regret coming here."
+
+    kel "Come on, [mc], you promised you'd hangout with me like old times sake"
+
+    mc "But I do have to admit, I miss this place.."
+
+    mc "I also miss you al—{nw}"
+
+
+    a "Ha! Fuck you, [bas]!"
+
+    hari "I told you I can easily beat you."
+
+    omi "YAAAYYY!"
+
+    bas "Damn it.. He's gotten stronger.."
+
+    omi "Guys, our [bas]'s paying for our drinks!!"
+
+    hari "A bet is a bet."
+
+    bas "Yeah.. a bet is a bet.."
+
+    bas "Atleast he already forgot about being angry.."
+
+    omi "I want to fight [kel]!"
+
+    kel "Mm, sure{nw}"
+
+
+    "" "*put phone ringing sfx here"
+
+    kel "Ah, I gotta take this."
+
+    kel "You can play with [mc] instead."
+
+    omi "[mc]..?"
+
+    "" "[kel] walks out the arcade to take that seemingly important phone call..."
+
+    "" "..."
+
+    mc "What do you wanna play Omi?{nw}"
+    stop music
+
+    "" "[omi] went off really fast to the back corner of the arcade, where her favorite game is located."
+
+    mc "What's her deal?"
+
+    "I immediately followed"
+    scene bg arcade2
+    with fade
+
+    omi "No! Leave me alone!"
+
+    omi "I already accepted the fact that you're gone.."
+
+    omi "Why did you.."
+
+    play music "My Feelings.mp3"
+    omi "Why did you have to show yourself back again?"
+
+    mc "Oms..?"
+
+    omi "NO! Don't you dare call me that again!"
+
+    omi "You were.. you were my bestfriend.. and you.. you left me, you left us."
+
+    omi "So suddenly.."
+
+    "" "..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
