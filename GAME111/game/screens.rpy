@@ -269,7 +269,7 @@ style quick_button_text is button_text
 
 style quick_menu:
     xalign 0.5
-    yalign 1.0
+    yalign 0.980###############
 
 style quick_button:
     properties gui.button_properties("quick_button")
@@ -350,7 +350,10 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+
 screen main_menu():
+
+
 
     ## This ensures that any other menu screen is replaced.
     tag menu
@@ -1681,14 +1684,17 @@ label splashscreen:
     with fade
 
     #intro art here
-    scene bg intro_scene
     with fade
 
     "In a world where you can change everything..."
     pause 2
-
+    with Fade(2.0, 0.0, 0.0)
     stop music fadeout 2.0
     return
 
 init python:
     config.main_menu_music = "title.mp3"
+
+
+
+

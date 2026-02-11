@@ -92,6 +92,9 @@ label start:
 
     "Your name is [player_name]."
 
+    stop music fadeout 2
+
+
     "[player_name]... [player_name]..? We miss you.."
 
     "Please.. just.. r-"
@@ -111,11 +114,15 @@ label start:
 
     "" "I check the clock"
 
+    show screen time_2pm
+
 
     "" "Holy shit how is it already 2PM?"
 
 
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
+
+    hide screen time_2pm
 
 
     show mc happy at left
