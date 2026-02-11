@@ -11,7 +11,7 @@ define mc = Character("[player_name]") #original mc
 define mc2 = Character("Lawrence") #unofficial name, the isekai'd new body of mc
 define mom = Character("Mom") #mc and mc2 mom
 define dad = Character("Dad") #dead from both mc and mc2 world
-define sis = Character("Monika") #mc and mc2 sister
+define sis = Character("Mika") #amc and mc2 sister
 define kel = Character("Kiel") #mc bestfriend, mc2 classmate (something went wrong)
 define hari = Character("Hari") #m (basilo bestfriend)
 define bas = Character("Basilo") #m (hari and basilo best friends who compete for Chika)
@@ -239,8 +239,6 @@ label start:
 
 label choice_1:
     mc "The Park it is."
-
-
 
 
 label choice_2:
