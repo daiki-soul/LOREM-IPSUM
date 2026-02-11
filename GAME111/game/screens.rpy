@@ -1691,4 +1691,4 @@ label splashscreen:
     return
 
 init python:
-    config.main_menu_music = "a life for granted.mp3"
+    config.main_menu_music = "title.mp3"
