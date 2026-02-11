@@ -506,7 +506,6 @@ label store_end:
 
     kel "Mm, sure{nw}"
 
-
     "" "*put phone ringing sfx here"
 
     kel "Ah, I gotta take this."
