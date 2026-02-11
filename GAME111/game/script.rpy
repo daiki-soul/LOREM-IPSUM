@@ -4,6 +4,8 @@
 #can change color of character names, declare here
 
 #MAIN CAST
+default player_name = ""
+
 define a = Character("???") #placeholder for unknown
 define mc = Character("Arlo") #original mc
 define mc2 = Character("Lawrence") #unofficial name, the isekai'd new body of mc
@@ -69,13 +71,25 @@ transform close_right:
 
 #GAME START
 label start:
-    "(MC)... (MC)..? We miss you.."
+
+    scene black
+    with fade
+
+    $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
+    $ player_name = player_name.strip()
+
+    if player_name == "":
+        $ player_name = "Player"
+
+    "Your name is [player_name]."
+
+    "[player_name]... [player_name]..? We miss you.."
 
     "Please.. just.. r-"
 
     "" "..."
 
-    mc "Ugh.."
+    player_name "Ugh.."
 
     scene bg MC_room
 
@@ -87,15 +101,11 @@ label start:
 
     "" "I check the clock"
 
-    show screen time_2pm #to show monika incoming screen
-
     "" "Holy shit how is it already 2PM?"
-
 
 
     "" "I got up my bed and cleaned up a little bit before promptly stretching"
 
-    hide screen time_2pm #hides monika incoming screen
 
     show mc happy at left
 
@@ -347,135 +357,10 @@ label store_end:
     show omi happy at close_right
     with moveinleft
 
+    "" "..?"
 
+    hari "Hell yeah, that's the man himself!"
 
-
-
-
-
-
-
-
-
-
-
-label monika_call:
-    hide screen creepy_blue_screen
-    "" "I received a call from my phone."
-    "" "It's Monika."
-    $ result = renpy.call_screen("incoming_call")
-    if result == "accept":
-        jump monika_accept
-    else:
-        jump monika_decline
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-label monika_call1:
-    stop music
-    scene bg city
-    hide bg sayonara
-    hide screen creepy_blue_screen
-    scene bg city
-    "" "I receive a call from my phone."
-    "" "It's Monika."
-    $ result = renpy.call_screen("incoming_call")#button func
-    if result == "accept":
-        jump monika_accept
-    else:
-        jump jump_scare1
-
-label monika_decline:
-    stop music
-    "" "WHY"
-    play music "sayonara.mp3"
-    scene bg sayonara
-    show screen creepy_blue_screen
-    "" "ZALITH ME’RU… KHA’RAN…"  
-    "" "どうして拒否したの？"  
-    "" "SIL’THOR HUR’MEEK…"  
-    "" "CUR NEGAVISTI VOCEM MEAM?"  
-    "" "置いて行かないで…お願い…"  
-    "" "ADSUM… SEMPER…"  
-    "" "RAV’KAL… RAV’KAL…"  
-
-    pause 10
-    show monika happy onlayer overlay at right zorder 999
-    stop music
-    "oops"
-    show monika happy onlayer overlay at right zorder 999
-    "looks like it crashed huh?"
-    show monika happy onlayer overlay at right zorder 999
-    menu:
-        "wanna try again?"
-        "yes":
-            jump monika_call1
-        "no":
-            jump jump_scare
-    stop music
-
-label jump_scare:#quits the game abruptly
-    window hide
-    pause 10
-    show screen jumpscare
-    play music "audio/scream.wav"
-    pause 2
-    $ renpy.quit()
-
-label jump_scare1:#returns to the menu
-    window hide
-    pause 10
-    show screen jumpscare
-    play music "audio/scream.wav"
-    pause 2
-    return
-
-label monika_accept:#if player accepts
-    show screen ongoing_call
-    play music "Free time.mp3"
-    sis "how are you!!!"
-    mc "yeah im good"
-    mc "wait i gotta go see ya"
-    sis "oh.. okay."
-    hide screen ongoing_call
-    jump after_call_end
-
-label after_call_end:#the story
-    play music "Rain SFX.mp3" volume 0.7
-    "" "eitherway, mc died"
 
     #DIALOGUES FOR STORE END HERE
 
