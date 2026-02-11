@@ -1690,4 +1690,5 @@ label splashscreen:
     stop music fadeout 2.0
     return
 
-   
+init python:
+    config.main_menu_music = "a life for granted.mp3"
