@@ -241,8 +241,6 @@ label choice_1:
     mc "The Park it is."
 
 
-
-
 label choice_2:
     mc "Guess I should get something to drink first."
 
