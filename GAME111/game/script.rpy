@@ -359,7 +359,41 @@ label store_end:
 
     "" "..?"
 
-    hari "Hell yeah, that's the man himself!"
+    hari "BROOO it's actually you!"
+
+    bas "No way.. I thought you moved or something.."
+
+    omi "I.."
+
+    bas "Dude, what the fuck? Why aren't you responding to our calls?"
+
+    hari "Yeah I genuinely thought you fucking died."
+
+    mc "H-Hari? Basilo?? and.. Omi.."
+
+    mc "What are you guys doing here?"
+
+    hari "Kel texted us that he saw you, we immediately got here as soon as possible."
+
+    bas "Yeah, he didn't even bother showering today."
+
+    hari "Bro, I was in my room the whole day, I'm sure I'm clean!"
+
+    omi "Haah.. Haha.."
+
+    bas "Yeah.. sure.."
+
+    "" "[bas] leaned closer and whispered, he's lying"
+
+    "" "I can see the look in [hari]'s face as he's starting to look really pissed off. I almost forgot that he has always had a short fuse."
+
+    "" "[bas] should probably stop teasing him now or else they'd get into a fight like they always do.."
+
+    omi "G-Guys.. cut it out.."
+
+
+
+
 
 
     #DIALOGUES FOR STORE END HERE
