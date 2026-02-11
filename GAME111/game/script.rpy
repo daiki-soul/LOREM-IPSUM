@@ -7,7 +7,7 @@
 default player_name = ""
 
 define a = Character("???") #placeholder for unknown
-define mc = Character("Arlo") #original mc
+define mc = Character("[player_name]") #original mc
 define mc2 = Character("Lawrence") #unofficial name, the isekai'd new body of mc
 define mom = Character("Mom") #mc and mc2 mom
 define dad = Character("Dad") #dead from both mc and mc2 world
