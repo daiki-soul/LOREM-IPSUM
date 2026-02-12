@@ -604,12 +604,12 @@ label crash:
     $ renpy.music.set_volume(3, delay=0, channel="sound")
     stop music
 
-    $ renpy.pause(0.1, hard=True)
+    $ renpy.pause(2, hard=True)
     "{nw}"
 
     scene crash
     window hide
-    pause 4
+    $ renpy.pause(2, hard=True)
     play music "heart.wav" volume 7
     show screen incoming_call_mom1
     "" "mom?"
@@ -653,7 +653,7 @@ label crash:
         "mo"
         jump accept
 
-    label mom_decline:
+    label mom_decline: #reminder to self, fix something here, also next scene is isekai time, scenes from this point onwards will be sloppy because will prio fast writing and polish once whole story done
         "momoom"
         jump decline
 
@@ -661,7 +661,7 @@ label crash:
 
 
 
-        "IN PROGRESS"
+        "IN PROGRESS" #error here instead of returning to main menu properly
     return
         
         
@@ -682,4 +682,3 @@ label crash:
 
     #MC DEATH SCENE STARTS HERE
 
-    return
