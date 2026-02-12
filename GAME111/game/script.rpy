@@ -604,39 +604,46 @@ label crash:
     $ renpy.music.set_volume(3, delay=0, channel="sound")
     stop music
 
-    $ renpy.pause(4.0, hard=True)
+    $ renpy.pause(0.1, hard=True)
     "{nw}"
 
     scene crash
     window hide
     pause 4
-    show screen phone_glitch
     play music "heart.wav" volume 7
+    show screen incoming_call_mom1
     "" "mom?"
+    show screen incoming_call_mom1
     #ring sfx here
     pause 3
-    show screen phone_glitch
+    show screen incoming_call_mom1
     "" "..."
-    show screen phone_glitch
+    show screen incoming_call_mom1
     "" "mom..."
+    show screen incoming_call_mom1
     "" "..."
+    show screen incoming_call_mom1
     "" "..."
+    show screen incoming_call_mom1
     "" "Aughh.. fuck.."
+    show screen incoming_call_mom1
     "" "It hurts.."
+    show screen incoming_call_mom1
     "" ".."
+    show screen incoming_call_mom1
     "" "I.. I can barely open my eyes.."
+    show screen incoming_call_mom1
     "" ".."
+    show screen incoming_call_mom1
     "" "Someone.."
+    show screen incoming_call_mom1
     "" ".."
-
+    show screen incoming_call_mom1
     "" "mom is calling.."
-    show screen phone_glitch
+    show screen incoming_call_mom1
     "" "I.. I need to answer."
-
     # Call incoming call screen
-    $ result = renpy.call_screen("incoming_call_mom") #try making phone still flicker and glitch while still being able to answer call
-    "" "With all my strength.."
-    "" "...I managed to tap with my fingers."
+    $ result = renpy.call_screen("incoming_call_mom") #try making phone still flicker and glitch while still being able to answer call -done
     if result == "accept":
         jump mom_accept
     else:
@@ -644,9 +651,11 @@ label crash:
 
     label mom_accept:
         "mo"
+        jump accept
 
     label mom_decline:
         "momoom"
+        jump decline
 
 
 
