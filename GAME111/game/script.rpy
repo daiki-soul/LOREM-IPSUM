@@ -600,7 +600,7 @@ label crash:
     window hide
     pause 3
     show screen phone_glitch
-    play music "heart.mp3"
+    play music "heart.wav"
     "" "mom?"
     pause 3
     show screen phone_glitch
