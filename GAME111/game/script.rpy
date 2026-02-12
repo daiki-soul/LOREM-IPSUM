@@ -594,40 +594,66 @@ label crash:
     "" "I was going to fix everything tomorrow…"
     "" "Heh…"
     "" "Guess tomorrow’s not coming."
+    "" "So much for finally deciding to fix everything."
+    "" "This is how I die, huh?"
+    "" "My life flashes before my eyes."
+    "" "All I see are my regrets."
+    "" "The Truck finally hits my body.."
+    "" "Augh!{nw}"
     $ renpy.sound.play("carsqueel.mp3",loop=False)
     $ renpy.music.set_volume(3, delay=0, channel="sound")
     stop music
 
+    $ renpy.pause(4.0, hard=True)
+    "{nw}"
+
     scene crash
     window hide
-    pause 3
+    pause 4
     show screen phone_glitch
     play music "heart.wav" volume 7
     "" "mom?"
+    #ring sfx here
     pause 3
     show screen phone_glitch
     "" "..."
     show screen phone_glitch
+    "" "mom..."
     "" "..."
     "" "..."
-    "" "..."
-    "" "..."
+    "" "Aughh.. fuck.."
+    "" "It hurts.."
+    "" ".."
+    "" "I.. I can barely open my eyes.."
+    "" ".."
+    "" "Someone.."
+    "" ".."
+
     "" "mom is calling.."
     show screen phone_glitch
-    "" "i need to answer."
+    "" "I.. I need to answer."
 
     # Call incoming call screen
-    $ result = renpy.call_screen("incoming_call_mom")
+    $ result = renpy.call_screen("incoming_call_mom") #try making phone still flicker and glitch while still being able to answer call
+    "" "With all my strength.."
+    "" "...I managed to tap with my fingers."
     if result == "accept":
         jump mom_accept
     else:
         jump mom_decline
 
     label mom_accept:
-        jump end1
+        "mo"
 
     label mom_decline:
-        jump end2
+        "momoom"
+
+
+
+
+
+        "IN PROGRESS"
+    return
         
         
 

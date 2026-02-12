@@ -312,11 +312,16 @@ screen navigation():
 
             textbutton _("History") action ShowMenu("history")
 
+
             textbutton _("Save") action ShowMenu("save")
 
         textbutton _("Load Game") action ShowMenu("load")
 
         textbutton _("Settings") action ShowMenu("preferences")
+
+        textbutton "Journal" action Function(renpy.show_screen, "journal_screen")
+
+
 
         if _in_replay:
 
@@ -338,6 +343,34 @@ screen navigation():
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
+
+# Screen for the journal
+# Journal screen
+screen journal_screen():
+    tag menu  # pause game like menu
+
+    window:
+        xalign 0.5
+        yalign 0.5
+        xsize 800
+        ysize 600
+
+        vbox:
+            spacing 10
+
+            text "Journal" size 30
+
+            # Scrollable multi-line input
+            # THIS WORKS FOR FULL TEXT TYPING
+            frame:
+                xsize 780
+                ysize 520
+
+                viewport draggable True mousewheel True scrollbars "vertical":
+                    vbox:
+                        input value VariableInputValue("persistent.journal_text") allow "all" length 10000 xsize 760 ysize 500
+
+            textbutton "Save & Close" action [Function(save_journal), Return()]
 
 
 style navigation_button is gui_button
@@ -1701,6 +1734,8 @@ label splashscreen:
 
 init python:
     config.main_menu_music = "title.mp3"
+
+
 
 
 
