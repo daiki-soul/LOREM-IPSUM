@@ -554,12 +554,12 @@ label store_end:
     omi "You were.. you were my bestfriend.. and you.. you left me, you left us."
 
     omi "So suddenly.."
-
-    "" "..."
-
-
     stop music
 
+
+
+
+    "" "..."
 
 
 
