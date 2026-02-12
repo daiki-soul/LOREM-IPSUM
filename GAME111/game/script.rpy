@@ -83,7 +83,7 @@ transform run_right:
 #GAME START
 label start:
 
-    scene black
+    scene bg streetrain
     with fade
 
     $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
@@ -93,6 +93,8 @@ label start:
         $ player_name = "Player"
 
     "Your name is [player_name]."
+
+    "" "Do you remember?"
 
     stop music fadeout 2
 
@@ -559,7 +561,7 @@ label store_end:
 
 
 
-    "" "..."
+    "" "SCENE IN PROGRESS. PROGRESSING TO DEATH SCENE..."
 
 
 
@@ -592,15 +594,15 @@ label crash:
     "" "I was going to fix everything tomorrow…"
     "" "Heh…"
     "" "Guess tomorrow’s not coming."
-    $ renpy.sound.play("carsqueel.mp3", channel="sound", loop=False)
-    $ renpy.music.set_volume(0.3, delay=0, channel="sound")
+    $ renpy.sound.play("carsqueel.mp3",loop=False)
+    $ renpy.music.set_volume(3, delay=0, channel="sound")
     stop music
 
     scene crash
     window hide
     pause 3
     show screen phone_glitch
-    play music "heart.wav"
+    play music "heart.wav" volume 7
     "" "mom?"
     pause 3
     show screen phone_glitch

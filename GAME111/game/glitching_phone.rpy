@@ -15,7 +15,7 @@ screen phone_glitch():
         xpos glitch_x
         ypos glitch_y
 
-    timer 1.25 repeat True action [
+    timer 1 repeat True action [
         SetScreenVariable("current_image",
             random.choice([
                 "images/incoming_mom.png",
