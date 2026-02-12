@@ -560,15 +560,6 @@ label store_end:
 
 
     "" "..."
-
-
-
-
-
-
-
-
-
 label crash:
     scene truck
 
@@ -640,17 +631,6 @@ label crash:
 #         jump monika_accept
 #     else:
 #         jump monika_decline
-
-
-
-
-
-
-
-
-
-
-
 
     #DIALOGUES FOR STORE END HERE
 

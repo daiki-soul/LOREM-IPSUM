@@ -1,7 +1,7 @@
 init -2 python:
     renpy.music.register_channel(
         "ambient",
-        mixer="music",   # follows music volume
+        mixer="music", 
         loop=True,
         tight=True
     )
