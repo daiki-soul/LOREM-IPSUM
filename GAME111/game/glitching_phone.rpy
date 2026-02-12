@@ -1,9 +1,13 @@
 init python:
     import random
+screen phone_glitch_off():
+        add images/crackedoff_phone.png
+
 
 screen phone_glitch():
-
-    default current_image = "images/crackedhomescreen_phone.png"
+    modal False
+    zorder 100
+    default current_image = "images/incoming_mom.png"
     default glitch_x = 0
     default glitch_y = 0
 
@@ -11,11 +15,12 @@ screen phone_glitch():
         xpos glitch_x
         ypos glitch_y
 
-    timer 0.25 repeat True action [
+    timer 1.25 repeat True action [
         SetScreenVariable("current_image",
             random.choice([
-                "images/crackedhomescreen_phone.png",
+                "images/incoming_mom.png",
                 "images/crackedoff_phone.png"
             ])
         ),
     ]
+

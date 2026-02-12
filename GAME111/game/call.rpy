@@ -1,4 +1,4 @@
-screen incoming_call():
+screen incoming_call_monika():
     modal True
     zorder 100
 
@@ -10,7 +10,7 @@ screen incoming_call():
         idle "accept_idle.png"
         # hover "accept_hover"
         xpos 0.832
-        ypos 0.659
+        ypos 0.660
         action Return("accept")
 
     # DECLINE button
@@ -18,11 +18,32 @@ screen incoming_call():
         idle "decline_idle.png"
         # hover "decline_hover"
         xpos 0.927
-        ypos 0.659
+        ypos 0.660
         action Return("decline")
 
-screen ongoing_call():
-    add "ongoing_monika.png"
-    zorder 100
-   
+
         
+screen incoming_call_mom():
+    modal True
+    zorder 101
+
+    # Background phone image
+    add "incoming_mom.png"
+
+    # ACCEPT button
+    imagebutton:
+        idle "idle_accept_mom.png"
+        hover "ongoing_mom_hover1.png"
+        xpos 0.832
+        ypos 0.660
+        action Return("accept")
+
+    # DECLINE button
+    imagebutton:
+        idle "idle_decline_mom.png"
+        hover "ongoing_mom_hover2.png"
+        xpos 0.927
+        ypos 0.660
+        action Return("decline")
+
+

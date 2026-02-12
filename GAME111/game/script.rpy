@@ -48,6 +48,8 @@ image bg arcade2 = im.Scale("bg arcade2.jpg", 1920, 1080)
 image jumpscare = "images/jumpscare.png"
 image bg sayonara = im.Scale("bg sayonara.png", 1920, 1080)
 image monika = "images/monika.png"
+image truck = im.Scale("images/truck.jpg", 1920, 1080)
+image crash = im.Scale("images/crash.jpg", 1920, 1080)
 
 #defining positions
 transform mid_left:
@@ -556,6 +558,7 @@ label store_end:
     "" "..."
 
 
+    stop music
 
 
 
@@ -566,11 +569,53 @@ label store_end:
 
 
 
+label crash:
+    scene truck
 
+    $ renpy.sound.play("truckhorn.mp3", channel="sound", loop=False)
+    $ renpy.music.set_volume(0.3, delay=0, channel="sound")
+    "" "w-what?"
+    "" "Huh?"
+    "" "…What’s that sound?"
+    "" "Why are those headlights so close?"
+    "" "Wait."
+    "" "Is that truck… coming this way?"
+    "" "No—"
+    "" "Move."
+    "" "Move!"
+    "" "Why can’t I move?!"
+    "" "Ah…"
+    "" "So this is it."
+    "" "I really thought I had more time."
+    "" "I was going to fix everything tomorrow…"
+    "" "Heh…"
+    "" "Guess tomorrow’s not coming."
+    $ renpy.sound.play("carsqueel.mp3", channel="sound", loop=False)
+    $ renpy.music.set_volume(0.3, delay=0, channel="sound")
 
+    scene crash
+    window hide
+    pause 5
+    show screen phone_glitch
+    "" "mom?"
+    show screen phone_glitch
+    "" "..."
+    show screen phone_glitch
+    "" "mom is calling.."
+    show screen phone_glitch
+    "" "i need to answer."
 
+    # Call incoming call screen
+    $ result = renpy.call_screen("incoming_call_mom")
 
+    if result == "accept":
+        jump monika_accept
+    else:
+        jump monika_decline
 
+    # Turn off phone glitch at the end
+    show screen phone_glitch_off
+    window show
 
 
 
