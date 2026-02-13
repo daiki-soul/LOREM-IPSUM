@@ -610,7 +610,7 @@ label crash:
     scene crash
     window hide
     $ renpy.pause(2, hard=True)
-    play music "heart.wav" volume 7
+    $ ambient.play("audio/ambient/heart.wav") #try find way to increase volume
     show screen incoming_call_mom1
     "" "mom?"
     show screen incoming_call_mom1
@@ -644,24 +644,30 @@ label crash:
     "" "I.. I need to answer."
     # Call incoming call screen
     $ result = renpy.call_screen("incoming_call_mom") #try making phone still flicker and glitch while still being able to answer call -done
-    if result == "accept":
-        jump mom_accept
-    else:
-        jump mom_decline
 
     label mom_accept:
-        "mo"
-        jump accept
+        if result == "accept":
+            "moo!!"
+            "aaa"
 
-    label mom_decline: #reminder to self, fix something here, also next scene is isekai time, scenes from this point onwards will be sloppy because will prio fast writing and polish once whole story done
-        "momoom"
-        jump decline
+        else:
+
+                "aaa"
+                "22"
+                "this continyes"
+
+        "this part is now isekai scene"
 
 
 
 
 
-        "IN PROGRESS" #error here instead of returning to main menu properly
+
+
+
+
+
+         #error here instead of returning to main menu properly
     return
         
         
