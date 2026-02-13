@@ -651,20 +651,11 @@ label crash:
 
     label mom_accept:
         "mo"
-        jump accept
+    return
 
     label mom_decline: #reminder to self, fix something here, also next scene is isekai time, scenes from this point onwards will be sloppy because will prio fast writing and polish once whole story done
         "momoom"
-        jump decline
-
-
-
-
-
-        "IN PROGRESS" #error here instead of returning to main menu properly
     return
-        
-        
 
 
 
