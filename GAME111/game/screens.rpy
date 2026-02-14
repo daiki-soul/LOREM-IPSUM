@@ -171,7 +171,20 @@ style say_dialogue:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#input
 
+screen input(prompt):
+    style_prefix "input"
 
+    frame:
+        background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
+        xalign 0.5
+        yalign 0.5
+        padding (30,30)
+
+        vbox:
+            spacing 10
+
+            text prompt style "input_prompt"
+            input id "input"
 
 
 
@@ -278,16 +291,11 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("New Game") action Start()
-            textbutton "game" action Show("input")
-
-
-
+            textbutton _("New Game") action Show("name_input_screen")
 
         else:
 
             textbutton _("History") action ShowMenu("history")
-            
 
 
             textbutton _("Save") action ShowMenu("save")
@@ -297,8 +305,7 @@ screen navigation():
         textbutton _("Settings") action ShowMenu("preferences")
 
         textbutton "Journal" action Function(renpy.show_screen, "journal_screen")
-        
-    
+
 
 
         if _in_replay:
@@ -323,11 +330,20 @@ screen navigation():
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 # Screen for the journal
-# Journal screen
 
 
-screen input(prompt):
-    style_prefix "input"
+
+
+
+
+
+
+
+screen name_input_screen():
+
+    modal True
+    zorder 200
+    default temp_name = ""  # screen-local
 
     frame:
         background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
@@ -336,14 +352,31 @@ screen input(prompt):
         padding (30,30)
 
         vbox:
-            spacing 10
+            spacing 15
 
-            text prompt style "input_prompt"
-            input id "input"
+            text "What is your name?"
+
+            input value temp_name
+
+            textbutton "Start Game" action If(
+                temp_name.strip() != "",
+                [
+                    SetVariable("player_name", temp_name),  # Save globally
+                    Hide("name_input_screen"),
+                    Start()
+                ],
+                None
+            )
 
 
 
 
+
+
+
+
+
+# Journal screen
 screen journal_screen():
     tag menu  # pause game like menu
 

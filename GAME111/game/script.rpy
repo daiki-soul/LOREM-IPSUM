@@ -78,6 +78,30 @@ transform run_right:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #others
 
 #GAME START
@@ -86,11 +110,11 @@ label start:
     scene bg streetrain
     with fade
 
-    $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?") 
-    $ player_name = player_name.strip()
+    # $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
+    # $ player_name = player_name.strip()
 
-    if player_name == "":
-        $ player_name = "Player"
+    # if player_name == "":
+    #     $ player_name = "Player"
 
     "Your name is [player_name]."
 
