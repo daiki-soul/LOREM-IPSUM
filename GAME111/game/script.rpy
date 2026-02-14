@@ -600,6 +600,7 @@ label crash:
     "" "All I see are my regrets."
     "" "The Truck finally hits my body.."
     "" "Augh!{nw}"
+    with vpunch
     $ renpy.sound.play("carsqueel.mp3",loop=False)
     $ renpy.music.set_volume(3, delay=0, channel="sound")
     stop music
@@ -657,6 +658,7 @@ label crash:
                 "this continyes"
 
         "this part is now isekai scene"
+        "I"
 
 
 
