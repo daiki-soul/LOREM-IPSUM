@@ -356,7 +356,7 @@ screen name_input_screen():
 
             text "What is your name?"
 
-            input value temp_name
+            input value temp_name.title()
 
             textbutton "Start Game" action If(
                 temp_name.strip() != "",
