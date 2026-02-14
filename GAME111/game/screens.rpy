@@ -291,7 +291,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("New Game") action Show("name_input_screen")
+            textbutton _("New Game") action Function(Start())
 
         else:
 
@@ -329,44 +329,6 @@ screen navigation():
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
-# Screen for the journal
-
-
-
-
-
-
-
-
-
-screen name_input_screen():
-
-    modal True
-    zorder 200
-    default temp_name = ""  # screen-local
-
-    frame:
-        background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
-        xalign 0.5
-        yalign 0.5
-        padding (30,30)
-
-        vbox:
-            spacing 15
-
-            text "What is your name?"
-
-            input value temp_name
-
-            textbutton "Start Game" action If(
-                temp_name.strip() != "",
-                [
-                    SetVariable("player_name", temp_name),  # Save globally
-                    Hide("name_input_screen"),
-                    Start()
-                ],
-                None
-            )
 
 
 
@@ -402,6 +364,18 @@ screen journal_screen():
                         input value VariableInputValue("persistent.journal_text") allow "all" length 10000 xsize 760 ysize 500
 
             textbutton "Save & Close" action [Function(save_journal), Return()]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 style navigation_button is gui_button
