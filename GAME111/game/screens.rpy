@@ -175,32 +175,17 @@ screen input(prompt):
     style_prefix "input"
 
     frame:
-        background Frame("gui/input_frame_bg.png", Borders(25, 25, 25, 25))
+        background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
         xalign 0.5
         yalign 0.5
-        xpadding 30
-        ypadding 30
-
+        padding (30,30)
 
         vbox:
             spacing 10
-            xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
 
             text prompt style "input_prompt"
             input id "input"
 
-style input_prompt is default
-
-style input_prompt:
-    xalign gui.dialogue_text_xalign
-    properties gui.text_properties("input_prompt")
-
-style input:
-    xalign gui.dialogue_text_xalign
-    xmaximum gui.dialogue_width
 
 
 ## Choice screen ###############################################################
