@@ -10,22 +10,29 @@ define a = Character("???") #placeholder for unknown
 define mc = Character("[player_name]") #original mc
 define mcln = Character("[last_half_name]") #half of player name
 define mc2 = Character("Lawrence") #unofficial name, the isekai'd new body of mc
+
+    #FAMILY
 define mom = Character("Mom") #mc and mc2 mom
 define dad = Character("Dad") #dead from both mc and mc2 world
-define sis = Character("Mika") #amc and mc2 sister
+define sis = Character("Mika") #mc and mc2 sister
+
+    #important to plot
 define kel = Character("Kiel") #mc bestfriend, mc2 classmate (something went wrong)
 define hari = Character("Hari") #m (basilo bestfriend)
 define bas = Character("Basilo") #m (hari and basilo best friends who compete for Chika)
-define omi = Character("Omi") #m but femboy
-define chi = Character("Chika") #f the beautiful shy girl
-define wagi = Character("Waguri") #f
+
+define omi = Character("Omi") #m but femboy #HEROINE
+
+define chi = Character("Chika") #f the beautiful shy girl #HEROINE
+
+define wagi = Character("Waguri") #f #HEROINE
 define ros = Character("Rosie") #f
 define yui = Character("Yui") #f (wagi, ros, yui are childhood friends)
 
-#SIDE CHARACTERS
-define ichi = Character("Ichika") #f classmate
+    #SIDE CHARACTERS USELESS FOR MOST PART
+define ichi = Character("Ichika") #f classmate #POSSIBLE HEROINE
 define paul = Character("Paul") #m school delinquent
-define emu = Character("Emu") #f someone who dies later on (pretends to be important character early in the story) (this ending for her depends on the story flow and route)
+define emu = Character("Emu") #f a cheerful, lively, very pleasant girl, much like Sayori (no depression) someone who dies later on (pretends to be important character early in the story) (this ending for her depends on the story flow and route)
 define ari = Character("Ari")#f emu's friend
 define ku = Character("Kuro")#m the otaku
 
@@ -44,6 +51,8 @@ image bg kitchen = im.Scale("bg kitchen.png", 1920, 1080)
 image bg street = im.Scale("bg street.png", 1920, 1080)
 image bg convenience store = im.Scale("bg convenience store.jpg", 1920, 1080)
 image bg city = im.Scale("bg city.png", 1920, 1080)
+image bg cityaft = im.Scale("bg city_aft.png", 1920, 1080)
+image bg cityn = im.Scale("bg city_night.png", 1920, 1080)
 image bg arcade = im.Scale("bg arcade.jpg", 1920, 1080)
 image bg arcade2 = im.Scale("bg arcade2.jpg", 1920, 1080)
 image jumpscare = "images/jumpscare.png"
@@ -52,6 +61,17 @@ image monika = "images/monika.png"
 image truck = im.Scale("images/truck.jpg", 1920, 1080)
 image crash = im.Scale("images/black.png", 1920, 1080)
 image mc2room = im.Scale("mc2room.png", 1920, 1080)
+image bathroom = im.Scale("bathroom.png", 1920, 1080)
+image mchallway = im.Scale("mchallway.png", 1920, 1080)
+image mchallwayn = im.Scale("mchallwayn.png", 1920, 1080)
+image roof = im.Scale("roof.png", 1920, 1080)
+image roofaft = im.Scale("roof_aft.png", 1920, 1080)
+image roofn = im.Scale("roof_night.png", 1920, 1080)
+image buildingstairs = im.Scale("stairs_mid_aft.png", 1920, 1080)
+image scenewithomi = im.Scale("scenewithomi.png", 1920, 1080)
+
+
+image omiscene = im.Scale("scenewithomi.png", 1920, 1080)
 
 #defining positions
 transform mid_left:
@@ -82,9 +102,15 @@ transform run_right:
 
 #MUSIC DEFINE
 init python:
+    renpy.music.register_channel("sound", mixer="sound", loop=True)
     renpy.music.register_channel("sfx", mixer="sfx", loop=False)
+    renpy.music.register_channel("sfx1", mixer="sfx1", loop=False)
+    renpy.music.register_channel("sfx2", mixer="sfx2", loop=False)
+    renpy.music.register_channel("sfx3", mixer="sfx3", loop=False)
     renpy.music.register_channel("sfx_loop", mixer="sfx", loop=True)
     renpy.music.register_channel("ambient", mixer="ambient", loop=True)
+    renpy.music.register_channel("sfx4", mixer="sfx4", loop=True)
+
 
 
 
@@ -239,7 +265,7 @@ label start:
 
     sis "That's why you love me, right?"
 
-    "" "She elbows me while grabbing her own breakfast and walking away."
+    "" "She elbows you while grabbing her own breakfast and walking away."
 
     show mom at right
 
@@ -315,7 +341,7 @@ label choice_2:
     show kiel happy at right
     with moveinright
 
-    "" "The person standing in front of me is an old friend, Kel, we both used to hangout alot in high school."
+    "" "The person standing in front of you is an old friend, Kel, we both used to hangout alot in high school."
 
     "" "After graduation, we kinda drifted apart."
 
@@ -453,7 +479,7 @@ label store_end:
 
     bas "Guys lets hangout like we used to! Since [mc] is here!"
 
-    kel "Yo, what's going on guys."
+    kel "Hey, what's going on guys."
     show kel happy at center
     with moveinleft
 
@@ -484,7 +510,7 @@ label store_end:
 
     omi "[bas]! That's rude!"
     show bas at run_right
-    "" "[omi] follows them both into the arcade, leaving just me and [kel] behind."
+    "" "[omi] follows them both into the arcade, leaving just you and [kel] behind."
     show omi at run_right
 
     "" "[kel] smiles at me"
@@ -539,13 +565,17 @@ label store_end:
 
     omi "I want to fight [kel]!"
 
-    kel "Mm, sure{nw}"
+    kel "Mm, sure.{nw}"
+    $ renpy.sound.play("audio/ambient/phonering.mp3", channel="sound", loop=False)
+    $ renpy.sound.set_volume(1, delay=0, channel="sound")
 
-    "" "*put phone ringing sfx here"
+    kel "..."
 
     kel "Ah, I gotta take this."
 
     kel "You can play with [mc] instead."
+
+    $ renpy.sound.stop(channel="sound", fadeout=3.0)
 
     omi "[mc]..?"
 
@@ -556,7 +586,8 @@ label store_end:
     mc "What do you wanna play Omi?{nw}"
     stop music
 
-    "" "[omi] went off really fast to the back corner of the arcade, where her favorite game is located."
+    "" "[omi] went off real fast by herself to the back corner of the arcade, where her favorite game is seemingly located."
+    "" "She didn't even look back or tell you to come with her."
 
     mc "What's her deal?"
 
@@ -577,15 +608,550 @@ label store_end:
 
     omi "NO! Don't you dare call me that again!"
 
-    omi "You were.. you were my bestfriend.. and you.. you left me, you left us."
+    omi "You were.. you were my bestfriend.. you.. you left us{w=1}, and..{w=1} you left me!"
 
     omi "So suddenly.."
-    stop music
+
+    omi "Tell me, [mc], why?{w=1} How could you do this?"
+
+    "She starts sobbing really bad.{w=1} Good thing we're at the back of the arcade, or else the others will hear her."
+
+    mc "[omi].."
+
+    omi "I can't even look at you anymore. You look and act so much different now."
+
+    mc "Omi… I… I never meant to hurt you."
+
+    omi "Never meant to hurt me? Do you even hear yourself? You disappeared without a word! Just… gone!"
+
+    "Her hands tremble as she clutches the edge of the arcade machine, eyes glossy with tears."
+
+    mc "I had… reasons. Things I couldn’t control… but I always thought—{nw}"
+
+    omi "Thought what? That everything would be okay if you just left? That I wouldn’t notice?"
+
+    "Her voice cracks, and she wipes at her face, trying to regain some composure, but failing."
+
+    omi "You left me behind, [mc]. Everyone else… they moved on, but I stayed, waiting… hoping… for you to come back."
+
+    mc "Omi… I never stopped caring. I just… I didn’t know how to come back to you, to us."
+
+    omi "Us? There’s no ‘us’ anymore. You broke it. You broke everything!"
+
+    "She turns away, shoulders shaking. The arcade noises fade into a muffled background as her sobs echo in your chest more than your ears."
+
+    "You really done it now this time, [mc].{w=1} You've made the most bubbly, energetic, clumsy, optimistic, kind, cheerful, innocent, caring, affectionate and warmhearted girl cry."
+
+    "What the fuck is wrong with you."
+
+    "I think the others heard us by now."
+
+    mc "Please… just… let me explain. I’m not the same person I was… but I’m here now."
+
+    omi "…You’re here now? And that’s supposed to fix years of silence, of… loneliness?"
+
+    mc "No… it doesn’t fix anything. I know that. But I want to try, if you’ll let me."
+
+    "For a long moment, she doesn’t respond. The only sound is her shaky breathing and the faint beep of the arcade machine."
+
+    omi "…You think it’s that easy?"
+
+    mc "No… I know it’s not. But I’ll do whatever it takes to make things right… even if it takes forever."
+
+    "She finally turns to you, her eyes red and raw, searching yours for any hint of the friend she once knew."
+
+    omi "…Forever, huh? That’s a long time, [mc]. Are you even sure you can handle that?"
+
+    "She chuckles while still being teary."
+
+    mc "You know what?{w=1} Since everyone's doing their own thing, you wanna go outside somewhere?{w=1} You know, just to talk?"
+
+    omi "I'd love that."
+
+    "Thus, you've made your first step to earning her forgiveness."
+
+    "You both quietly leave the arcade."
+
+    stop music fadeout 1.0
+
+    scene bg cityaft
+    with dissolve
+
+    play music "rain.mp3" fadein 1.5
+
+    "The noise of the arcade dies the moment the door shuts behind you."
+
+    "Outside, the air feels cooler. Lighter. Like the world isn’t pressing down as hard."
+
+    omi "…It’s weird."
+
+    play music "Piece By Piece.mp3" fadein 1
+
+    mc "What is?"
+
+    omi "Walking next to you like this again."
+
+    "She stuffs her hands into her jacket pockets, staring straight ahead."
+
+    omi "Part of me wants to pretend nothing happened."
+
+    omi "And another part of me wants to yell at you all over again."
+
+    mc "Yeah… that sounds about right."
+
+    "She lets out a small breath that almost sounds like a laugh."
+
+    omi "You always were bad at comforting people."
+
+    mc "Hey, I’m improving. Slightly."
+
+    omi "Mmm. Debatable."
+
+    "A brief silence settles between you—not awkward, but heavy."
+
+    omi "You know… when you disappeared…"
+
+    omi "I kept replaying our last conversation in my head."
+
+    omi "Trying to figure out what I did wrong."
+
+    mc "…You didn’t do anything wrong."
+
+    "She slows her steps."
+
+    omi "Then why did it feel like I was the one left behind?"
+
+    mc "Because I was a coward."
+
+    "She looks at you, surprised by how fast you said it."
+
+    mc "I didn’t know how to face everyone. Especially you."
+
+    mc "So I ran."
+
+    omi "…Figures."
+
+    "She exhales, long and shaky."
+
+    omi "I don’t hate you, you know."
+
+    omi "I just don’t know where to put you anymore."
+
+    mc "Then… let me earn a place."
+
+    "She stops walking completely."
+
+    omi "This doesn’t mean I forgive you."
+
+    mc "I know."
+
+    omi "And I’m not promising anything."
+
+    mc "I’m not asking for promises."
+
+    "She looks at your face for a moment, then nods."
+
+    omi "…Okay."
+
+    "It’s small. Fragile."
+
+    "But it’s real."
+
+    "And for the first time since you returned"
+
+    "You’re not walking alone anymore."
+
+    "You both stop near a quiet convenience store [kel] works in,{w=1} its lights buzzing softly."
+
+    omi "…Hey."
+
+    mc "Yeah?"
+
+    omi "I’m kinda hungry."
+
+    "She says it suddenly, like she just remembered hunger exists."
+
+    mc "That’s what you took from that whole emotional scene earlier in the arcade?"
+
+    omi "Hey! Crying burns calories!"
+
+    "She smiles small, wobbly, careless, but real."
+
+    "That smile hits harder than her yelling did."
+
+    "That's weird, we only just hungout today and I'm already starting to notice details about her.."
+
+    mc "You’re… doing okay?"
+
+    omi "Mhm."
+
+    "She pauses."
+
+    omi "…Well, I mean, I’m functioning."
+
+    "She laughs, a little too quick."
+
+    omi "Which is basically the same thing, right?"
+
+    mc "Not really."
+
+    omi "Wow, okay. Straight for the throat."
+
+    "She nudges you lightly with her shoulder."
+
+    omi "But yeah… I’m okay."
+
+    omi "I always am."
+
+    "She says it casually."
+
+    "Too casually."
+
+    mc "You don’t always have to be."
+
+    "She looks away, pretending to read a poster on the window."
+
+    omi "Someone has to keep things light."
+
+    omi "If I don’t, things get… heavy."
+
+    mc "You’re allowed to be heavy sometimes."
+
+    omi "Heh…"
+
+    omi "You really did change."
+
+    mc "Is that bad?"
+
+    omi "…No."
+
+    "She smiles again. Brighter this time."
+
+    omi "It’s just… different."
+
+    omi "Old you would’ve panicked and changed the subject by now."
+
+    mc "Guess I’m learning."
+
+    omi "Guess I’m… glad."
+
+    "She steps inside the store first, holding the door open for you."
+    stop music fadeout 1
+    scene bg convenience store
+    play music "Convenience store.mp3" volume 0.7
+
+    omi "Come on."
+
+    omi "You still owe me, remember?"
+
+    mc "For what?"
+
+    omi "For disappearing."
+
+    "She says it lightly."
+
+    "But she doesn’t let go of the door."
+
+    mc "Come on, I'm buying you snacks now."
+
+    omi "YAAAYYY!"
+
+    "The moment we got in the store, I clenched at my wallet as I see her grabbing so much food."
+
+    "You remember how much she actually likes to eat sweet stuff."
+
+    "She's now heading your way carrying all the food she wants you to buy"
+
+    omi "So.. this one's for you and this one's for me.{w=1} Ehe..."
+
+    mc "Wow, you are so thoughtful, considering we're spending MY money.."
+
+    omi "Ehehe.."
+
+    "Oh well, since I wasn't going outside for a long time, my allowance did have kind of stacked up."
+
+    "After you grab all the food in a paper bag, [omi] suggest you both eat at the rooftop of the arcade building."
+
+    "You both exit the store and head back to the arcade."
+    play music "Cinnamon.mp3" volume 0.7
+    scene bg cityaft with dissolve
+    scene bg arcade with dissolve
+    "Your friends are all still playing, guess they really miss the arcade, huh."
+
+    scene buildingstairs with dissolve
+    scene roofaft with dissolve
+
+
+    "We finally climbed up the stairs.{w=1} The rooftop is quiet."
+
+    "Way quieter than the arcade below."
+
+    "Ambience in the distance can be easily heard, and the city hum feels far away.{w=1} It really is so quiet up here."
+
+    omi "Wow…"
+
+    omi "I forgot this place existed."
+
+    mc "You forgot because you’re always inside eating sugar."
+
+    omi "HEY!"
+
+    "She plops down near the edge, legs dangling, already tearing open a snack."
+
+    omi "This is why I brought you here."
+
+    mc "For the view?"
+
+    omi "Nope."
+
+    omi "Because food tastes better when you’re somewhere stupid."
+
+    mc "That explains a lot about you."
+
+    omi "Rude."
+
+    "She hands you one of the snacks."
+
+    omi "Here. Compensation."
+
+    mc "For emotional damage?"
+
+    omi "For buying everything I wanted."
+
+    "You sit beside her."
+
+    "For a moment, neither of you speaks."
+    stop music fadeout 1
+
+    omi "…You know."
+
+    omi "Back then, I thought you’d come back."
+
+    mc "Yeah?"
+
+    omi "Every time I came here, I’d imagine you sitting right there."
+
+    "She points to the spot next to you."
+
+    omi "I even practiced what I’d say."
+
+    mc "What was the line?"
+
+    omi "Hmm…"
+
+    "She smiles."
+
+    omi "Probably something dumb."
+
+    omi "Like… ‘You’re late.’"
+
+    mc "Sounds like you."
+
+    omi "Hey! That’s charming."
+
+    "She laughs, then quiets."
+    play music "Sparks Ignite.mp3"
+
+    omi "Seeing you actually here now feels… unreal."
+
+    "The wind brushes past."
+
+    "Her shoulder barely touches yours."
+
+    omi "If this is a dream… don’t wake me up yet."
+
+    mc "Omi—"
+
+    "She turns her head."
+
+    "You’re closer than you realized."
+
+    "Way closer."
+
+    "She freezes."
+
+    omi "…Oh."
+
+    "Her eyes flick down."
+
+    "Then back up."
+
+    "She swallows."
+
+    omi "This is probably a bad idea."
+
+    mc "Yeah."
+
+    "Neither of you moves."
+
+    omi "…You won’t disappear if I do this, right?"
+
+    mc "I won’t. I already made a promise, right?"
+
+    mc "I already told you that I'd make it up to you, right?"
+
+    omi "True..{w=1} so.."
+
+
+
+    "She leans in."
+
+    "I lean in too, to reciprocate"
+
+    scene scenewithomi with dissolve
+
+    "The kiss is soft."
+
+    "Brief."
+
+    "Like she’s afraid to take more than a second."
+
+    "She pulls back fast, covering her mouth."
+
+    scene roofaft with dissolve
+
+    omi "I— I’m sorry!"
+
+    omi "That was— I wasn’t thinking!"
+
+    mc "Omi—"
+
+    omi "Just— just pretend that didn’t—"
+
+    "She stops talking."
+
+    "She’s still right there."
+
+    "Not pulling away."
+
+    "Not leaving."
+
+    omi "…You’re still here."
+
+    mc "Yeah."
+
+    "She lets out a shaky laugh."
+
+    omi "Good."
+
+    "She scoots a tiny bit closer."
+
+    omi "Just… don’t make me regret that, okay?"
+
+    "The city keeps glowing below."
+
+    "And for now.."
+
+    "She doesn’t let go."
+
+    "We eventually had to go down and meet with the others as the day was passing."
+
+    scene bg arcade with dissolve
 
 
 
 
-    "" "SCENE IN PROGRESS. PROGRESSING TO DEATH SCENE..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    stop music fadeout 1.0
+
+
+
+
+
+
+    mc "Hey guys, sorry we had some stuff to talk about."
+
+    "You notice that [omi] is sobbing."
+
+
+
+    hari "Oi, who made our [omi] cry?{w=1} Who did it, [mc]? I'll make sure this asshole gets what's comin to em."
+
+    bas "Yo,{w=1} what's going on here?"
+
+    kel "Hey guys, what is—{nw}"
+
+    omi "It's okay, guys, I just miss [mc] so much.{w=1} Hehe."
+    play music "Cinnamon.mp3" volume 0.7
+
+    hari "Good. I wouldn't want anyone making our [omi] cry."
+
+    bas "You're so cringe, [hari]."
+
+    hari "...Man, I just want to stand up for our friend"
+
+    kel "..."
+
+    "[omi] laughs carefree"
+
+    kel "*Maybe now isn't the time to tell them about my news..*"
+
+    "We all go quiet for a second."
+
+    hari "Man… I gotta wake up at 6 tomorrow."
+
+    kel "Same. Work’s been killing me lately."
+
+    bas "Yeah… adult life kinda sucks. I have so much responsibilities once I'm back in my college dorm."
+
+    mc "Heh… yeah…"
+
+    "Omi goes quiet for a second"
+
+    hari "Guys, we should take a picture. For memories."
+
+    bas "Oh yeah, like old times!"
+
+    "They all look at you."
+
+    mc "Lets do it."
+
+    bas "Wow,[mc] is no longer afraid of cameras?{w=1} Shocker."
+
+    kel "Haha, he actually used to act allergic to cameras all the time."
+
+    hari "Yeah, I had to grab and forcefully bring this guy to our photos."
+
+    "Omi chuckles once again."
+
+    mc "Hey, come on{w=1}. Lets just get this over with"
+
+    "[omi] glances at you subtly"
+
+    "You decide to stand next to [omi] in the picture.{w=1}. You swear you just heard her giggle."
+
+    "Once the picture gets taken, you all decide to finally part your ways."
+
+    "Heh, can't believe I took them for granted."
+
+    "Today was awesome."
+
+    "From this day forward, I shall finally put my life back together!"
+
+    "I'll fix everything!{w=1} Yeah!!"
+
+
+
+
+
+
+
+
 
 
 
@@ -623,46 +1189,65 @@ label crash:
     "" "My life flashes before my eyes."
     "" "All I see are my regrets."
     "" "The Truck finally hits my body.."
+    hide screen film_grain_effect
     "" "Augh!{nw}"
     with vpunch
-    $ renpy.sound.play("audio/ambient/carsqueel.mp3", channel="sound", loop=False)
-    $ renpy.sound.set_volume(1, delay=0, channel="sound")
-    $ renpy.sound.play("peoplescreaming.mp3",loop=True)
+    $ renpy.sound.play("audio/ambient/carsqueel.mp3", channel="sfx")
+    $ renpy.sound.set_volume(2, delay=0, channel="sfx")
+
+    pause 1
+
+    $ renpy.sound.play("audio/ambient/car_alarm.mp3", channel="sfx2")
+    $ renpy.sound.set_volume(0.5, channel="sfx2")
 
 
-    $ renpy.sound.set_volume(3, delay=0, channel="sound")
+
     stop music
 
     $ renpy.pause(3, hard=True)
     "{nw}"
 
-    scene crash
+    scene crash #OPTIONAL maybe put blood overlaying on screen, maybe put red and blue effects to simulate police sirens too
     window hide
-    $ renpy.pause(3, hard=True)
-    $ renpy.sound.play("audio/ambient/heart.wav", channel="sound", loop=True) #convert .wav into mp3 or OGG (better) because it is more compatible this way
-    $ renpy.sound.set_volume(1, delay=0, channel="sound") #try find way to increase volume of heart sfx
+
+    $ ambient.play("audio/ambient/heart.wav")
+
+    $ renpy.sound.play("audio/ambient/earringing.mp3", channel="sfx")
+    $ renpy.sound.set_volume(0.5, channel="sfx")
+
+    $ renpy.pause(5, hard=True)
+
+    "Ugh.."
+
+
+
     show screen incoming_call_mom1
-    $ renpy.sound.play("audio/ambient/truckhorn.mp3", channel="sfx")
-    $ renpy.sound.set_volume(1.0, channel="sfx")
 
-    $ renpy.sound.play("audio/ambient/carsqueel.mp3", channel="sfx")
 
-    $ renpy.sound.play("peoplescreaming.mp3", channel="sfx_loop", loop=True)
 
-    $ renpy.sound.play("audio/ambient/heart.wav", channel="ambient", loop=True)
+    $ renpy.sound.play("audio/ambient/peoplescreaming.mp3", channel="sfx_loop", loop=True)
+    $ renpy.sound.set_volume(0.5, channel="sfx_loop")
+
 
     "" "mom?"
     show screen incoming_call_mom1
-    #ring sfx here
+
     pause 3
     show screen incoming_call_mom1
     "" "..."
+
+    $ renpy.sound.play("audio/ambient/phonering.mp3", channel="sfx1")
+    $ renpy.sound.set_volume(0.5, channel="sfx1")
+
     show screen incoming_call_mom1
     "" "mom..."
     show screen incoming_call_mom1
     "" "..."
     show screen incoming_call_mom1
     "" "..."
+    $ renpy.sound.play("audio/ambient/police.mp3", channel="sfx3")
+    $ renpy.sound.set_volume(0.5, channel="sfx3")
+
     show screen incoming_call_mom1
     "" "Aughh.. fuck.."
     show screen incoming_call_mom1
@@ -671,6 +1256,7 @@ label crash:
     "" ".."
     show screen incoming_call_mom1
     "" "I.. I can barely open my eyes.."
+
     show screen incoming_call_mom1
     "" ".."
     show screen incoming_call_mom1
@@ -697,14 +1283,37 @@ label isekai_scene:
     hide screen film_grain_effect
 
     #ISEKAI!!!
-
+    $ renpy.sound.stop(channel="sfx", fadeout=3.0)
+    $ renpy.sound.stop(channel="sfx1", fadeout=3.0)
+    $ renpy.sound.stop(channel="sfx2", fadeout=3.0)
+    $ renpy.sound.stop(channel="sfx3", fadeout=3.0)
+    $ renpy.sound.stop(channel="sfx_loop", fadeout=3.0)
+    $ renpy.sound.stop(channel="sound", fadeout=3.0)
+    $ renpy.sound.stop(channel="sfx4", fadeout=3.0)
+    $ ambient.stop()
     "..."
+
     "I guess I'm dead."
     "[mom].. [sis].. My friends.."
-    "and.."
-    "[omi].. I'm sorry I let you down.."
+    "and..{w=1} [omi]..{w=1} I'm sorry I let you down."
     "I truly am the worst person ever."
+    "I'm so sorry, everybody."
+    "God please, give me a second chance."
+    "I swear I'll fix everything"
+    "I need{w=1.0} No.. I want to do it all again!"
+    "I want to fix my life!"
+    "Please.. if there even is a divine being out there.."
+
+    $ renpy.sound.play("audio/ambient/whispering.mp3", channel="sfx")
+    $ renpy.sound.set_volume(0.5, channel="sfx")
+    "Give me a chance.. I beg you.."
+    "I'll.. do anything."
+
     mc "Ugh.. Fuck.."
+
+    $ renpy.sound.play("audio/ambient/buildup.mp3", channel="sfx1")
+    $ renpy.sound.set_volume(0.5, channel="sfx1")
+
     mc "..."
     "My body feels light."
     "Like I've been somewhere inbetween sleeping and falling"
@@ -715,15 +1324,25 @@ label isekai_scene:
     "Strange.. Why do I feel fine."
     "I open my eyes"
     scene mc2room
-    show expression Solid("#0004") as dark_overlay
-    with fade
+
     "..."
     ".."
     ".."
     "What the hell?"
     "Where the fuck am I?{w=1.0} Who's room is this??"
-    "And who is that calling me?" #
+    "And who is that calling me?"
+    "I try to stand up from the bed I've been laying in that I do not recognize at all."
+    "No..{w=1} I don't even recognize anything here."
+    "The moment I tried to stand up, I almost fell infront of me {w=1} I feel light as hell that it's actually disorienting."
+    mc "Fuck.. I need to vomit."
+    "I went out the bedroom to look for the bathroom. Thankfully, it was just across the hall and conveniently open with no one inside."
 
+    scene mchallwayn with dissolve
+
+    scene bathroom with dissolve
+
+
+    ".."
 
 
 
