@@ -82,26 +82,6 @@ transform run_right:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #others
 
 #GAME START
