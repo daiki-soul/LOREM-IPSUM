@@ -83,26 +83,6 @@ transform run_right:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #others
 
 #GAME START
@@ -113,6 +93,7 @@ label start:
 
     $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
     $ player_name = player_name.strip()
+    $ player_name = player_name.title()
 
 # If player leaves it blank, set default
 if player_name == "":
