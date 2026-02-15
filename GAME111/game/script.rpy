@@ -86,7 +86,7 @@ label start:
     scene bg streetrain
     with fade
 
-    $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?") 
+    $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
     $ player_name = player_name.strip()
 
     if player_name == "":
