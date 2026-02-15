@@ -112,6 +112,7 @@ label start:
 
     $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
     $ player_name = player_name.strip()
+    $ player_name = player_name.capitalize()
 
     if player_name == "":
         $ player_name = "Player"
