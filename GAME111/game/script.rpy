@@ -51,6 +51,7 @@ image bg sayonara = im.Scale("bg sayonara.png", 1920, 1080)
 image monika = "images/monika.png"
 image truck = im.Scale("images/truck.jpg", 1920, 1080)
 image crash = im.Scale("images/black.png", 1920, 1080)
+image mc2room = im.Scale("mc2room.png", 1920, 1080)
 
 #defining positions
 transform mid_left:
@@ -75,9 +76,15 @@ transform run_left:
 transform run_right:
     linear 0.25 xalign 1.5
 
+#transform night effect
 
 
 
+#MUSIC DEFINE
+init python:
+    renpy.music.register_channel("sfx", mixer="sfx", loop=False)
+    renpy.music.register_channel("sfx_loop", mixer="sfx", loop=True)
+    renpy.music.register_channel("ambient", mixer="ambient", loop=True)
 
 
 
@@ -96,15 +103,17 @@ label start:
     $ player_name = player_name.title()
 
 # If player leaves it blank, set default
-if player_name == "":
-    $ player_name = "Player"
+    if player_name == "":
+        $ player_name = "Player"
 
-# Compute the last half of the name
-$ last_half_name = player_name[len(player_name)//2:]
 
-# If something went wrong and last_half_name is blank (very short name), default it
-if last_half_name == "":
-    $ last_half_name = "Player"
+    $ last_half_name = player_name[len(player_name)//2:]
+
+
+    if last_half_name == "":
+        $ last_half_name = "Player"
+
+
 
 
     "Your name is [player_name]."
@@ -616,19 +625,32 @@ label crash:
     "" "The Truck finally hits my body.."
     "" "Augh!{nw}"
     with vpunch
-    $ renpy.sound.play("carsqueel.mp3",loop=False)
+    $ renpy.sound.play("audio/ambient/carsqueel.mp3", channel="sound", loop=False)
+    $ renpy.sound.set_volume(1, delay=0, channel="sound")
+    $ renpy.sound.play("peoplescreaming.mp3",loop=True)
+
+
     $ renpy.sound.set_volume(3, delay=0, channel="sound")
     stop music
 
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(3, hard=True)
     "{nw}"
 
     scene crash
     window hide
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(3, hard=True)
     $ renpy.sound.play("audio/ambient/heart.wav", channel="sound", loop=True) #convert .wav into mp3 or OGG (better) because it is more compatible this way
     $ renpy.sound.set_volume(1, delay=0, channel="sound") #try find way to increase volume of heart sfx
     show screen incoming_call_mom1
+    $ renpy.sound.play("audio/ambient/truckhorn.mp3", channel="sfx")
+    $ renpy.sound.set_volume(1.0, channel="sfx")
+
+    $ renpy.sound.play("audio/ambient/carsqueel.mp3", channel="sfx")
+
+    $ renpy.sound.play("peoplescreaming.mp3", channel="sfx_loop", loop=True)
+
+    $ renpy.sound.play("audio/ambient/heart.wav", channel="ambient", loop=True)
+
     "" "mom?"
     show screen incoming_call_mom1
     #ring sfx here
@@ -672,6 +694,10 @@ label crash:
 label isekai_scene:
     hide screen incoming_call_mom1
     stop sound
+    hide screen film_grain_effect
+
+    #ISEKAI!!!
+
     "..."
     "I guess I'm dead."
     "[mom].. [sis].. My friends.."
@@ -683,7 +709,20 @@ label isekai_scene:
     "My body feels light."
     "Like I've been somewhere inbetween sleeping and falling"
     "...[mcln]."
+    "[mc]!"
+    mc "Huh? What?"
+    a "You're gonna be late for school!{w=1.0} Wake up!"
+    "Strange.. Why do I feel fine."
+    "I open my eyes"
+    scene mc2room
+    show expression Solid("#0004") as dark_overlay
+    with fade
+    "..."
     ".."
+    ".."
+    "What the hell?"
+    "Where the fuck am I?{w=1.0} Who's room is this??"
+    "And who is that calling me?" #
 
 
 
@@ -694,8 +733,6 @@ label isekai_scene:
 
 
 
-
-#error here instead of returning to main menu properly
     return
         
         
