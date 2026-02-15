@@ -171,7 +171,20 @@ style say_dialogue:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#input
 
+screen input(prompt):
+    style_prefix "input"
 
+    frame:
+        background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
+        xalign 0.5
+        yalign 0.5
+        padding (30,30)
+
+        vbox:
+            spacing 10
+
+            text prompt style "input_prompt"
+            input id "input"
 
 
 
@@ -278,16 +291,11 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("New Game") action Start()
-            textbutton "game" action Show("input")
-
-
-
+            textbutton _("New Game") action Function(Start())
 
         else:
 
             textbutton _("History") action ShowMenu("history")
-            
 
 
             textbutton _("Save") action ShowMenu("save")
@@ -297,8 +305,7 @@ screen navigation():
         textbutton _("Settings") action ShowMenu("preferences")
 
         textbutton "Journal" action Function(renpy.show_screen, "journal_screen")
-        
-    
+
 
 
         if _in_replay:
@@ -322,28 +329,16 @@ screen navigation():
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
-# Screen for the journal
+
+
+
+
+
+
+
+
+
 # Journal screen
-
-
-screen input(prompt):
-    style_prefix "input"
-
-    frame:
-        background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
-        xalign 0.5
-        yalign 0.5
-        padding (30,30)
-
-        vbox:
-            spacing 10
-
-            text prompt style "input_prompt"
-            input id "input"
-
-
-
-
 screen journal_screen():
     tag menu  # pause game like menu
 
@@ -369,6 +364,18 @@ screen journal_screen():
                         input value VariableInputValue("persistent.journal_text") allow "all" length 10000 xsize 760 ysize 500
 
             textbutton "Save & Close" action [Function(save_journal), Return()]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 style navigation_button is gui_button

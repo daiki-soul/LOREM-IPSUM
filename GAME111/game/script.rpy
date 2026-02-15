@@ -3,8 +3,8 @@
 #declare all characters here
 #can change color of character names, declare here
 
-#MAIN CAST
-default player_name = ""
+# #MAIN CAST
+# default player_name = ""
 
 define a = Character("???") #placeholder for unknown
 define mc = Character("[player_name]") #original mc
@@ -73,6 +73,30 @@ transform run_left:
 
 transform run_right:
     linear 0.25 xalign 1.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
