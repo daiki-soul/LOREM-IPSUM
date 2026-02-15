@@ -1215,7 +1215,7 @@ label crash:
     scene crash #OPTIONAL maybe put blood overlaying on screen, maybe put red and blue effects to simulate police sirens too
     window hide
 
-    $ ambient.play("audio/ambient/heart.wav")
+    $ ambient.play("audio/ambient/heart.ogg")
 
     $ renpy.sound.play("audio/ambient/earringing.mp3", channel="sfx")
     $ renpy.sound.set_volume(0.5, channel="sfx")
