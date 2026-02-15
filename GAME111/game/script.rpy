@@ -1137,6 +1137,9 @@ label store_end:
 
     "Once the picture gets taken, you all decide to finally part your ways."
 
+    stop music
+    scene bg cityaft
+
     "Heh, can't believe I took them for granted."
 
     "Today was awesome."
@@ -1144,6 +1147,8 @@ label store_end:
     "From this day forward, I shall finally put my life back together!"
 
     "I'll fix everything!{w=1} Yeah!!"
+
+
 
 
 
