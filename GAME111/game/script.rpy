@@ -8,6 +8,7 @@
 
 define a = Character("???") #placeholder for unknown
 define mc = Character("[player_name]") #original mc
+define mcln = Character("[last_half_name]") #half of player name
 define mc2 = Character("Lawrence") #unofficial name, the isekai'd new body of mc
 define mom = Character("Mom") #mc and mc2 mom
 define dad = Character("Dad") #dead from both mc and mc2 world
@@ -113,8 +114,17 @@ label start:
     $ player_name = renpy.input("A college student is passed out cramming in his room. What is his name?")
     $ player_name = player_name.strip()
 
-    if player_name == "":
-        $ player_name = "Player"
+# If player leaves it blank, set default
+if player_name == "":
+    $ player_name = "Player"
+
+# Compute the last half of the name
+$ last_half_name = player_name[len(player_name)//2:]
+
+# If something went wrong and last_half_name is blank (very short name), default it
+if last_half_name == "":
+    $ last_half_name = "Player"
+
 
     "Your name is [player_name]."
 
@@ -598,15 +608,15 @@ label store_end:
 label crash:
     scene truck
 
-    $ renpy.sound.play("truckhorn.mp3", channel="sound", loop=False)
-    $ renpy.music.set_volume(0.3, delay=0, channel="sound")
+    $ renpy.sound.play("audio/ambient/truckhorn.mp3", channel="sound", loop=False)
+    $ renpy.sound.set_volume(1, delay=0, channel="sound")
     "" "w-what?"
     "" "Huh?"
     "" "…What’s that sound?"
     "" "Why are those headlights so close?"
     "" "Wait."
     "" "Is that truck… coming this way?"
-    play music "sayonara.mp3"
+    play music "sayonara.mp3" volume 1.0
     show screen film_grain_effect
     "" "No—"
     "" "Move."
@@ -626,7 +636,7 @@ label crash:
     "" "Augh!{nw}"
     with vpunch
     $ renpy.sound.play("carsqueel.mp3",loop=False)
-    $ renpy.music.set_volume(3, delay=0, channel="sound")
+    $ renpy.sound.set_volume(3, delay=0, channel="sound")
     stop music
 
     $ renpy.pause(2, hard=True)
@@ -635,7 +645,8 @@ label crash:
     scene crash
     window hide
     $ renpy.pause(2, hard=True)
-    $ ambient.play("audio/ambient/heart.wav") #try find way to increase volume
+    $ renpy.sound.play("audio/ambient/heart.wav", channel="sound", loop=True) #convert .wav into mp3 or OGG (better) because it is more compatible this way
+    $ renpy.sound.set_volume(1, delay=0, channel="sound") #try find way to increase volume of heart sfx
     show screen incoming_call_mom1
     "" "mom?"
     show screen incoming_call_mom1
@@ -666,23 +677,33 @@ label crash:
     show screen incoming_call_mom1
     "" "mom is calling.."
     show screen incoming_call_mom1
-    "" "I.. I need to answer."
+    "" "I.. {w=1.0} I need to answer."
     # Call incoming call screen
-    $ result = renpy.call_screen("incoming_call_mom") #try making phone still flicker and glitch while still being able to answer call -done
+    $ result = renpy.call_screen("incoming_call_mom")
 
     label mom_accept:
         if result == "accept":
-            "moo!!"
-            "aaa"
+            jump isekai_scene
 
         else:
+            jump isekai_scene
 
-                "aaa"
-                "22"
-                "this continyes"
+label isekai_scene:
+    hide screen incoming_call_mom1
+    stop sound
+    "..."
+    "I guess I'm dead."
+    "[mom].. [sis].. My friends.."
+    "and.."
+    "[omi].. I'm sorry I let you down.."
+    "I truly am the worst person ever."
+    mc "Ugh.. Fuck.."
+    mc "..."
+    "My body feels light."
+    "Like I've been somewhere inbetween sleeping and falling"
+    "...[mcln]."
+    ".."
 
-        "this part is now isekai scene"
-        "I"
 
 
 
