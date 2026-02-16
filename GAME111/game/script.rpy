@@ -69,7 +69,7 @@ image roofaft = im.Scale("roof_aft.png", 1920, 1080)
 image roofn = im.Scale("roof_night.png", 1920, 1080)
 image buildingstairs = im.Scale("stairs_mid_aft.png", 1920, 1080)
 image scenewithomi = im.Scale("scenewithomi.png", 1920, 1080)
-
+image schoolhall = im.Scale("schoolhall.png", 1920, 1080)
 
 image omiscene = im.Scale("scenewithomi.png", 1920, 1080)
 
@@ -1197,17 +1197,16 @@ label crash:
     hide screen film_grain_effect
     "" "Augh!{nw}"
     with vpunch
+    stop music
     $ renpy.sound.play("audio/ambient/carsqueel.mp3", channel="sfx")
     $ renpy.sound.set_volume(2, delay=0, channel="sfx")
+    with vpunch
 
     pause 1
 
     $ renpy.sound.play("audio/ambient/car_alarm.mp3", channel="sfx2")
     $ renpy.sound.set_volume(0.5, channel="sfx2")
 
-
-
-    stop music
 
     $ renpy.pause(3, hard=True)
     "{nw}"
@@ -1349,7 +1348,35 @@ label isekai_scene:
 
     ".."
 
+    "#draft on discord, check it. MOVING TO SCHOOL SCENE..."
 
+    scene schoolhall with fade
+    "Guess I'll have to navigate my way through this world's school."
+
+    scene black with fade
+
+    "Lets see.. So first we must figure out who my friends are in this world, their names, and maybe try and gather more information about who I am in this world."
+
+    "What I do find interesting is how some people from my world are also in this world."
+
+    "I should probab—{nw}"
+
+    a "Look who finally decided to show up."
+    hide scene with fade
+
+    show schoolhall
+    show wagi at center
+
+    ".."
+
+    "#left girl is rosie, right girl is waguri"
+
+    "#scene about mc being confused about the situation, girls baffled and thinks MC is acting all cocky, confident and different now. try gain info about world here"
+    "#running away from ros and wagi, success, investigate surroundings"
+    "#bump into a girl while monologuing here, still thinking about which girl to introduce next"
+    "#while talking with this unknown girl, bell rings, you dont know your class, you get saved by a dude telling you to follow him to your class. This dude is Basilo and is also your friend in this world"
+
+    #idk what to do from this point on. Finish scene above first
 
 
 
@@ -1359,7 +1386,7 @@ label isekai_scene:
 
     return
         
-        
+        #copy paste M dash here —
 
 
 
