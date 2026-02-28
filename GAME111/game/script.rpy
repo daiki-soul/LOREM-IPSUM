@@ -26,14 +26,15 @@ define omi = Character("Omi") #m but femboy #HEROINE
 define chi = Character("Chika") #f the beautiful shy girl #HEROINE
 
 define wagi = Character("Waguri") #f #HEROINE
-define ros = Character("Rosie") #f
-define yui = Character("Yui") #f (wagi, ros, yui are childhood friends)
 
+#define ros = Character("Rosie") #f no art NPC
+#define yui = Character("Yui") #f (wagi, ros, yui are childhood friends) no art NPC
     #SIDE CHARACTERS USELESS FOR MOST PART
-define ichi = Character("Ichika") #f classmate #POSSIBLE HEROINE
+define Rei = Character("Rei") #f class president
+define ich = Character("Ichika") #f classmate
 define paul = Character("Paul") #m school delinquent
-define emu = Character("Emu") #f a cheerful, lively, very pleasant girl, much like Sayori (no depression) someone who dies later on (pretends to be important character early in the story) (this ending for her depends on the story flow and route)
-define ari = Character("Ari")#f emu's friend
+define chu = Character("Chuuya") #f chuunibyou a cheerful, lively, very pleasant girl, much like Sayori (no depression) someone who dies later on (pretends to be important character early in the story) (this ending for her depends on the story flow and route)
+#define ari = Character("Ari")#f cHUUYA's friend NPC
 define ku = Character("Kuro")#m the otaku
 
 
@@ -640,11 +641,13 @@ label store_end:
 
     "She turns away, shoulders shaking. The arcade noises fade into a muffled background as her sobs echo in your chest more than your ears."
 
-    "You really done it now this time, [mc].{w=1} You've made the most bubbly, energetic, clumsy, optimistic, kind, cheerful, innocent, caring, affectionate and warmhearted girl cry."
+    "You really done it now this time, [mc].{w=1} You've made the most caring, affectionate—warmhearted girl cry."
 
     "What the fuck is wrong with you."
 
-    "I think the others heard us by now."
+    "Now I feel guilty."
+
+    "I think the others might have heard us by now."
 
     mc "Please… just… let me explain. I’m not the same person I was… but I’m here now."
 
@@ -666,7 +669,15 @@ label store_end:
 
     mc "You know what?{w=1} Since everyone's doing their own thing, you wanna go outside somewhere?{w=1} You know, just to talk?"
 
-    omi "I'd love that."
+    mc "That's if you want to or not"
+
+    "Sigh"
+
+    "Whatever cheers her up, guess I'll have to do this."
+
+    "She seems hesitant as first but she eventually wipes her tears then nodded her head."
+
+    omi "..Fine."
 
     "Thus, you've made your first step to earning her forgiveness."
 
@@ -676,6 +687,8 @@ label store_end:
 
     scene bg cityaft
     with dissolve
+    #$ renpy.sound.play("audio/ambient/outdoors.mp3", channel="sfx_loop", loop=True)
+    #$ renpy.sound.set_volume(1.0, channel="sfx_loop") #JOSH edit the mp3 file and make it loop friendly in audacity or something
 
     play music "rain.mp3" fadein 1.5
 
@@ -686,6 +699,8 @@ label store_end:
     omi "…It’s weird."
 
     play music "Piece By Piece.mp3" fadein 1
+
+    #play ambient bg noise here instead
 
     mc "What is?"
 
@@ -769,7 +784,7 @@ label store_end:
 
     omi "I’m kinda hungry."
 
-    "She says it suddenly, like she just remembered hunger exists."
+    "She says it so suddenly, like she just remembered hunger exists."
 
     mc "That’s what you took from that whole emotional scene earlier in the arcade?"
 
@@ -837,6 +852,7 @@ label store_end:
 
     "She steps inside the store first, holding the door open for you."
     stop music fadeout 1
+    #$ renpy.sound.stop(channel="sfx_loop", fadeout=3.0)
     scene bg convenience store
     play music "Convenience store.mp3" volume 0.7
 
@@ -947,7 +963,7 @@ label store_end:
 
     mc "Sounds like you."
 
-    omi "Hey! That’s charming."
+    omi "Hey! That’s..!"
 
     "She laughs, then quiets."
     play music "Sparks Ignite.mp3"
@@ -1370,6 +1386,84 @@ label isekai_scene:
     ".."
 
     "#left girl is rosie, right girl is waguri"
+    mc "…"
+
+    "Why is everyone staring at me like that? Did I… walk in weird or something?"
+
+    a "Hey, are you new here or something?"
+
+    mc "Uh… yeah… new… I guess?"
+
+    "You are trying to act normal but the others feel like it is way too confident. It's unsettling to everyone around."
+
+    "Two girls are standing near the lockers. One's got a sharp gaze, the other is fiddling with her hair nervously."
+
+    a "He's really acting dumb, [wagi]."
+
+    "It seems like one of them is called [wagi]."
+
+    wagi "H-h-yeah!"
+
+    wagi "Come on, [mc], you know the rules."
+
+    wagi "This is our spot and if we catch you."
+
+    "Huh, they apparently know me. Its best I probably should play along."
+
+    a "[wagi], I should teach this loser a lesson, don't you think?"
+
+    wagi "..."
+
+    "The school bell rings and the hall has erupted into chaos"
+
+    mc "…Right. I'll see you guys around."
+
+    "MC darts down the hall, heart racing but oddly calm. He can feel every step, every glance, like he’s… detached but hyper aware."
+
+    "Crap, I thought I could wing it today.."
+
+    "Who the hell are these girls?"
+
+    "What kind of stuff has this dude's body been up to.."
+
+    "Hm, speaking of which.. What happened t-"
+
+    a "Watch out!!{nw}"
+
+    mc "Ah!"
+    #bump effect and sfx here
+
+    "While deep in thoughts, I ended up bumping into another girl carrying a stack of books."
+
+    mc "Oh! Sorry, my bad—"
+
+    a "Hey! Watch it! Jeez… were you always this clumsy?"
+
+    mc "Uh… yeah… clumsy, but surviving… barely."
+
+    "You both pause awkwardly."
+
+    "She looks at you strange and noticed her expression is familiar, but couldn't explain why."
+
+    a "Thanks alot, jerk, now I have to organize all of these all over again!"
+
+    "I was about to apologize but she ran off immediately."
+
+    mc "Shit! I don’t even know where my class is!"
+
+    "Out of nowhere, a tall, friendly looking guy appears beside me."
+
+    a "Hey, relax. Follow me. You’re in my class."
+
+    "Wait what the hell..?"
+
+    mc "[bas]..?"
+
+    bas "Of course, the one and only. Come on, we're gonna be late, man."
+
+    "I finally breathe a sigh of relief and follow [bas], grateful for at least one familiar face in this confusing world."
+
+    "I glance behind me and spot [wagi] and her friend still looking at me with a weird look on their eyes."
 
     "#scene about mc being confused about the situation, girls baffled and thinks MC is acting all cocky, confident and different now. try gain info about world here"
     "#running away from ros and wagi, success, investigate surroundings"
@@ -1379,6 +1473,19 @@ label isekai_scene:
     #idk what to do from this point on. Finish scene above first
 
 
+
+
+
+    ###SCENE DRAFTS ALL GO HERE###
+
+    #Sex scene
+    "..."
+
+    #Weirdshit arc
+    "..."
+
+    #Twist reveal
+    "..."
 
 
 
