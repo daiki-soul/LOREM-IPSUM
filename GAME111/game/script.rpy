@@ -1418,7 +1418,7 @@ label isekai_scene:
 
     mc "…Right. I'll see you guys around."
 
-    "MC darts down the hall, heart racing but oddly calm. He can feel every step, every glance, like he’s… detached but hyper aware."
+    "I dart down the hall, heart racing but oddly calm."
 
     "Crap, I thought I could wing it today.."
 
