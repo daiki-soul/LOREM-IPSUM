@@ -2546,13 +2546,34 @@ label phone_complete:
     hide screen dark_overlay
     scene bg MC_room with fade
     "Ugh.."
+
+    play music "DDLC bgm.mp3" volume 0.8
     "Wait what the fuck?"
     "I'm home??"
-    "God what an awful-{nw}"
+    mc "Oh, I gotta get moving.. maybe I should start with some breakfast."
+    scene bg kitchen with dissolve
+    play music "Family bonds.mp3" volume 0.7
+
+    #put mom art here
+
+    show mom happy at right
+
+    $ ambient.play("audio/ambient/rain.mp3")#ambient
+
+    with moveinright
+
+    mom "Oh, you're up early, sweetie."
+
+    mc "WhAT THE FUCK IS GOING ON?"
+
+    mom "I was just kidding. Come eat, I got you your favorite!" #sprite no eyes
+
+    mc "Mac and cheese again? Seriously?{nw}"
+    #"God what an awful-{nw}"
     scene truck
     $ renpy.sound.play("audio/ambient/truckhorn.mp3", channel="sound", loop=False)
     $ renpy.sound.set_volume(1, delay=0, channel="sound")
-    pause 0.85
+    pause 0.5
     $ renpy.sound.play("audio/alarmclock.ogg", channel="sound", loop=True)
     $ renpy.sound.set_volume(1, delay=0, channel="sound")
 
@@ -3274,7 +3295,7 @@ label cafe_continue:
     #specifically chuuya and kuro
     #maybe add waguri somewhere too
     scene classmorn with dissolve
-    play music "Student heart.mp3" volume 0.6
+    play music "Student heart.mp3"  volume 0.6
 
     "On my third day, I've already structured a daily routine myself."
     "I don't know what my routine originally used to be."
@@ -3756,6 +3777,8 @@ label hallexploredone:
     scene libraryaft with dissolve
     play music "chika theme.mp3" volume 0.8
     #chika interactions at bookstore here, shes reading her book
+
+
     chi ""
 
 
