@@ -3,6 +3,14 @@
 #declare all characters here
 #can change color of character names, declare here
 
+
+
+#declaration for phone scene
+default gallery_done = False
+default contacts_done = False
+default docs_done = False
+
+
 # #MAIN CAST
 # default player_name = ""
 
@@ -2169,9 +2177,6 @@ label paulseat:
         "Government documents":
             jump docs
 
-default gallery_done = False
-default contacts_done = False
-default docs_done = False
 
 label gallery:
 
@@ -2573,11 +2578,12 @@ label phone_complete:
     scene truck
     $ renpy.sound.play("audio/ambient/truckhorn.mp3", channel="sound", loop=False)
     $ renpy.sound.set_volume(1, delay=0, channel="sound")
-    pause 0.5
+    $ renpy.pause(0.75, hard=True)
     $ renpy.sound.play("audio/alarmclock.ogg", channel="sound", loop=True)
     $ renpy.sound.set_volume(1, delay=0, channel="sound")
 
     scene mc2room
+    stop music
     mc "WHAT THE FUCK!"
 
 
