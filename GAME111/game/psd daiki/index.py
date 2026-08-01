@@ -38,6 +38,3 @@ for i in storage:
 print(len(inp), "letters.")
 print("vowels:", len(vresult))#how many vowels
 print("consonant:", len(cresult))#how many consonants
-
-
-lorem

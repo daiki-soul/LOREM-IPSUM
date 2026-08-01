@@ -1,6 +1,3 @@
-#Joshua A. Reyes CC3 - Lab Exercises //MARCH 7 2026
-#WMA-1C
-
 input1 = input("string1: ")
 input2 = input("string2: ")
 result = ""

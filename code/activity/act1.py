@@ -1,7 +1,4 @@
-#Joshua A. Reyes CC3 - Lab Exercises //MARCH 7 2026
-#WMA-1C
-
-inp = input("Input String: ")
+inp = input("enter string:")
 vresult = ""
 cresult = ""
 sresult = ""
@@ -12,6 +9,6 @@ for i in inp.lower():
         cresult += i
     else:
         sresult += i
-print("Vowel", vresult)
-print("Consonants:", cresult)
-print("Special Char:", sresult)
+print(vresult)
+print(cresult)
+print(sresult)
